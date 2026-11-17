@@ -27,6 +27,10 @@
 <meta property="og:image:alt" content="Nagłośnienie Aura Audio w Polsce - pięć zdjęć z realizacji ułożonych jak pasy logo">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="../../img/naglowki/monitor3-889.webp" imagesrcset="../../img/naglowki/monitor3-480.webp 480w, ../../img/naglowki/monitor3-720.webp 720w, ../../img/naglowki/monitor3-889.webp 889w" imagesizes="(max-width: 859px) calc(100vw - 32px), 44vw" fetchpriority="high">
+<link rel="preload" href="../../fonts/bsc-600-r.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/bsc-600-pl.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/barlow-400-r.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/barlow-400-pl.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* =====================================================================
    AURA AUDIO POLSKA - wygląd całej strony (jeden plik dla wszystkich podstron)
@@ -49,6 +53,10 @@
 @font-face{font-family:"Barlow SC";src:url(../../fonts/bsc-600-r.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+20AC}
 @font-face{font-family:"Barlow SC";src:url(../../fonts/bsc-600-pl.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
 
+/* zapasowe kroje o tych samych wymiarach co Barlow - tekst nie przeskakuje, gdy wczyta się właściwa czcionka */
+@font-face{font-family:"Barlow zapas";src:local("Arial"),local("ArialMT");size-adjust:95.3%;ascent-override:105%;descent-override:21%;line-gap-override:0%}
+@font-face{font-family:"Barlow SC zapas";src:local("Arial Bold"),local("Arial-BoldMT");font-weight:600;size-adjust:81.7%;ascent-override:122.4%;descent-override:24.5%;line-gap-override:0%}
+
 /* ================= 2. KOLORY I WYMIARY =================
    Kolory marki zmienia się TYLKO tutaj - działają na wszystkich podstronach.
    Grafit = pasy z logo Aura Audio, czerwień = "PL" z logo. */
@@ -67,8 +75,8 @@
   --margines:clamp(16px,4vw,56px);
   --szer:min(1680px, calc(100% - 2*var(--margines)));
   --naglowek:68px;
-  --font-tytul:"Barlow SC","Arial Narrow",Arial,sans-serif;
-  --font-tekst:Barlow,Arial,sans-serif;
+  --font-tytul:"Barlow SC","Barlow SC zapas","Arial Narrow",Arial,sans-serif;
+  --font-tekst:Barlow,"Barlow zapas",Arial,sans-serif;
 }
 
 /* ================= 3. PODSTAWY ================= */

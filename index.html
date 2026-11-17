@@ -27,6 +27,10 @@
 <meta property="og:image:alt" content="Nagłośnienie Aura Audio w Polsce - pięć zdjęć z realizacji ułożonych jak pasy logo">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="img/hero/pas-3-500.webp" imagesrcset="img/hero/pas-3-300.webp 300w, img/hero/pas-3-400.webp 400w, img/hero/pas-3-500.webp 500w" imagesizes="(max-width: 759px) 40vw, 29vw" fetchpriority="high">
+<link rel="preload" href="fonts/bsc-600-r.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bsc-600-pl.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-400-r.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-400-pl.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* =====================================================================
    AURA AUDIO POLSKA - wygląd całej strony (jeden plik dla wszystkich podstron)
@@ -49,6 +53,10 @@
 @font-face{font-family:"Barlow SC";src:url(fonts/bsc-600-r.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+20AC}
 @font-face{font-family:"Barlow SC";src:url(fonts/bsc-600-pl.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
 
+/* zapasowe kroje o tych samych wymiarach co Barlow - tekst nie przeskakuje, gdy wczyta się właściwa czcionka */
+@font-face{font-family:"Barlow zapas";src:local("Arial"),local("ArialMT");size-adjust:95.3%;ascent-override:105%;descent-override:21%;line-gap-override:0%}
+@font-face{font-family:"Barlow SC zapas";src:local("Arial Bold"),local("Arial-BoldMT");font-weight:600;size-adjust:81.7%;ascent-override:122.4%;descent-override:24.5%;line-gap-override:0%}
+
 /* ================= 2. KOLORY I WYMIARY =================
    Kolory marki zmienia się TYLKO tutaj - działają na wszystkich podstronach.
    Grafit = pasy z logo Aura Audio, czerwień = "PL" z logo. */
@@ -67,8 +75,8 @@
   --margines:clamp(16px,4vw,56px);
   --szer:min(1680px, calc(100% - 2*var(--margines)));
   --naglowek:68px;
-  --font-tytul:"Barlow SC","Arial Narrow",Arial,sans-serif;
-  --font-tekst:Barlow,Arial,sans-serif;
+  --font-tytul:"Barlow SC","Barlow SC zapas","Arial Narrow",Arial,sans-serif;
+  --font-tekst:Barlow,"Barlow zapas",Arial,sans-serif;
 }
 
 /* ================= 3. PODSTAWY ================= */
@@ -437,10 +445,10 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <section class="hero" aria-labelledby="hero-tytul">
   <div class="pasy" aria-hidden="true">
     <div class="pas pas-1"><picture><source media="(min-width: 760px)" srcset="img/hero/pas-1-300.webp 300w, img/hero/pas-1-400.webp 400w, img/hero/pas-1-500.webp 500w" sizes="24vw"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="500" height="1000" alt="" style="object-position:40% 50%"></picture></div>
-    <div class="pas pas-2"><img src="img/hero/pas-2-500.webp" srcset="img/hero/pas-2-300.webp 300w, img/hero/pas-2-400.webp 400w, img/hero/pas-2-500.webp 500w" sizes="(max-width: 759px) 26vw, 24vw" width="500" height="1000" alt="" style="object-position:45% 50%"></div>
+    <div class="pas pas-2"><img src="img/hero/pas-2-500.webp" srcset="img/hero/pas-2-300.webp 300w, img/hero/pas-2-400.webp 400w, img/hero/pas-2-500.webp 500w" sizes="(max-width: 759px) 26vw, 24vw" width="500" height="1000" alt="" style="object-position:45% 50%" fetchpriority="low"></div>
     <div class="pas pas-3"><img src="img/hero/pas-3-500.webp" srcset="img/hero/pas-3-300.webp 300w, img/hero/pas-3-400.webp 400w, img/hero/pas-3-500.webp 500w" sizes="(max-width: 759px) 40vw, 29vw" width="500" height="1000" alt="" style="object-position:50% 40%" fetchpriority="high"></div>
     <div class="pas pas-4"><picture><source media="(min-width: 760px)" srcset="img/hero/pas-4-300.webp 300w, img/hero/pas-4-400.webp 400w, img/hero/pas-4-500.webp 500w" sizes="24vw"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="500" height="1000" alt="" style="object-position:50% 50%"></picture></div>
-    <div class="pas pas-5"><img src="img/hero/pas-5-500.webp" srcset="img/hero/pas-5-300.webp 300w, img/hero/pas-5-400.webp 400w, img/hero/pas-5-500.webp 500w" sizes="(max-width: 759px) 26vw, 18vw" width="500" height="1000" alt="" style="object-position:50% 45%"></div>
+    <div class="pas pas-5"><img src="img/hero/pas-5-500.webp" srcset="img/hero/pas-5-300.webp 300w, img/hero/pas-5-400.webp 400w, img/hero/pas-5-500.webp 500w" sizes="(max-width: 759px) 26vw, 18vw" width="500" height="1000" alt="" style="object-position:50% 45%" fetchpriority="low"></div>
   </div>
   <div class="kontener hero-tresc">
     <h1 id="hero-tytul">Nagłośnienie Aura Audio w Polsce - dźwięk tam, gdzie są słuchacze</h1>
