@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<!-- Aura Audio Polska - strona statyczna (HTML + CSS + JS). Wygląd: css/style.css (kolory na górze pliku),
+     skrypt: js/main.js, lista filmów: dane/filmy.json, formularz: wyslij.php. Instrukcja: Instrukcja_strony_auraaudio.pl.pdf -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Głośniki instalacyjne Aura Audio i3, i3PR, i8, i12 - seria i | Aura Audio Polska</title>
+<meta name="description" content="Głośniki instalacyjne Aura Audio do restauracji, kościołów i sal: i3 projektu Stefana Lindforsa, i3PR z pasmem od 65 Hz bez subwoofera, zestawy i8 i i12.">
+<!-- WERSJA TESTOWA: ukryta przed Google (noindex). Na auraaudio.pl jest index, follow. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://disaster26.github.io/auraaudio-strona/systemy/glosniki-instalacyjne-seria-i/">
+<meta name="theme-color" content="#0E0F11">
+<link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../img/ikony/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Aura Audio Polska">
+<meta property="og:title" content="Głośniki instalacyjne Aura Audio i3, i3PR, i8, i12 - seria i | Aura Audio Polska">
+<meta property="og:description" content="Głośniki instalacyjne Aura Audio do restauracji, kościołów i sal: i3 projektu Stefana Lindforsa, i3PR z pasmem od 65 Hz bez subwoofera, zestawy i8 i i12.">
+<meta property="og:url" content="https://disaster26.github.io/auraaudio-strona/systemy/glosniki-instalacyjne-seria-i/">
+<meta property="og:image" content="https://disaster26.github.io/auraaudio-strona/img/og-aura-audio-polska.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nagłośnienie Aura Audio w Polsce - pięć zdjęć z realizacji ułożonych jak pasy logo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="../../img/naglowki/i12-960.webp" imagesrcset="../../img/naglowki/i12-480.webp 480w, ../../img/naglowki/i12-720.webp 720w, ../../img/naglowki/i12-960.webp 960w" imagesizes="(max-width: 859px) calc(100vw - 32px), 44vw" fetchpriority="high">
+<style>
+/* =====================================================================
+   AURA AUDIO POLSKA - wygląd całej strony (jeden plik dla wszystkich podstron)
+   ---------------------------------------------------------------------
+   Spis bloków (Ctrl+F po nazwie):
+     1. CZCIONKI          2. KOLORY I WYMIARY (tu zmienia się kolory marki)
+     3. PODSTAWY          4. WZÓR W TLE        5. PRZYCISKI I LISTY
+     6. NAGŁÓWEK I MENU   7. PIERWSZY EKRAN    8. NAGŁÓWEK PODSTRONY
+     9. SEKCJE            10. KARTY ZASTOSOWAŃ 11. PRODUKTY
+     12. GALERIE I RZĘDY  13. FILMY            14. LIGHTBOX
+     15. KONTAKT, FORMULARZ, MAPA              16. STOPKA
+     17. BANER COOKIES    18. ZNAK WYKONAWCY (Wylinka)
+   ===================================================================== */
+
+/* ================= 1. CZCIONKI (lokalnie, bez Google Fonts) =================
+   Każdy krój jest w dwóch małych plikach: podstawowy alfabet + polskie znaki.
+   Pogrubienia w tekście (b, strong) używają kroju nagłówków - mniej plików do pobrania. */
+@font-face{font-family:Barlow;src:url(../../fonts/barlow-400-r.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+20AC}
+@font-face{font-family:Barlow;src:url(../../fonts/barlow-400-pl.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"Barlow SC";src:url(../../fonts/bsc-600-r.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF,U+2013-2014,U+2018-201E,U+2022,U+2026,U+20AC}
+@font-face{font-family:"Barlow SC";src:url(../../fonts/bsc-600-pl.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+
+/* ================= 2. KOLORY I WYMIARY =================
+   Kolory marki zmienia się TYLKO tutaj - działają na wszystkich podstronach.
+   Grafit = pasy z logo Aura Audio, czerwień = "PL" z logo. */
+:root{
+  --tlo:#0E0F11;            /* tło strony (ciemne, ze stałym wzorem fal) */
+  --tlo-sekcji:rgba(255,255,255,.025); /* tło co drugiej sekcji (półprzezroczyste - wzór prześwituje) */
+  --karta:#181A1E;          /* karty produktów, formularz */
+  --karta-2:#202328;
+  --linia:#2B2E34;          /* cienkie linie i ramki */
+  --tekst:#EDEFF1;          /* główny tekst */
+  --tekst-2:#AEB4BC;        /* tekst pomocniczy */
+  --czerwien:#E00600;       /* przyciski (biały napis ma kontrast 4,9:1) */
+  --czerwien-ciemna:#B30500;/* przycisk po najechaniu */
+  --czerwien-jasna:#FF5A55; /* linki w tekście na ciemnym tle */
+  --wzor:rgba(255,255,255,.045); /* kreska wzoru w tle - im większa liczba, tym wyraźniejszy */
+  --margines:clamp(16px,4vw,56px);
+  --szer:min(1680px, calc(100% - 2*var(--margines)));
+  --naglowek:68px;
+  --font-tytul:"Barlow SC","Arial Narrow",Arial,sans-serif;
+  --font-tekst:Barlow,Arial,sans-serif;
+}
+
+/* ================= 3. PODSTAWY ================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--naglowek) + 8px);-webkit-text-size-adjust:100%;background:var(--tlo);color-scheme:dark}
+body{margin:0;color:var(--tekst);font:400 17px/1.6 var(--font-tekst);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--czerwien-jasna);text-underline-offset:3px}
+h1,h2,h3,h4{font-family:var(--font-tytul);font-weight:600;line-height:1.08;margin:0;letter-spacing:-.005em;color:#fff}
+h2{font-size:clamp(32px,3.6vw,54px)}
+h3{font-size:clamp(23px,2vw,30px)}
+p{margin:0}
+b,strong{font-family:var(--font-tytul);font-weight:600}
+.kontener{width:var(--szer);margin-inline:auto}
+.waski{max-width:78ch}
+.lead{font-size:clamp(18px,1.3vw,21px);color:var(--tekst-2);max-width:64ch;margin-top:18px}
+.niewidoczne{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.przeskocz{position:absolute;left:-999px;top:8px;z-index:100;background:#fff;color:#000;padding:10px 16px}
+.przeskocz:focus{left:8px}
+:focus-visible{outline:3px solid var(--czerwien-jasna);outline-offset:3px}
+.tekst p+p,.tekst p+ul,.tekst ul+p{margin-top:14px}
+.tekst ul{padding-left:22px;margin:14px 0 0}
+
+/* ================= 4. WZÓR W TLE =================
+   Stały (nieruchomy przy przewijaniu) wzór łuków - czoła fali z logo Aura Audio.
+   Warstwa jest przyklejona do okna, więc nie obciąża przewijania. */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='56' viewBox='0 0 260 56'%3E%3Cpath d='M0 40Q130 4 260 40' fill='none' stroke='%23fff' stroke-width='1.1'/%3E%3C/svg%3E");
+  background-size:260px 56px;opacity:.075}
+
+/* ================= 5. PRZYCISKI I LISTY ================= */
+/* przycisk w kształcie środkowego pasa logo (trapez rozszerzający się ku dołowi) */
+.przycisk{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;
+  background:var(--czerwien);color:#fff;text-decoration:none;font:600 18px/1 var(--font-tytul);letter-spacing:.01em;border:0;cursor:pointer;
+  clip-path:polygon(7px 0,calc(100% - 7px) 0,100% 100%,0 100%);transition:background .2s}
+.przycisk:hover{background:var(--czerwien-ciemna)}
+.przycisk--grafit{background:#2A2D33}
+.przycisk--grafit:hover{background:#363A41}
+.akcje{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.telefon-duzy{font:600 19px/1.3 var(--font-tytul);color:#fff;text-decoration:none}
+.telefon-duzy span{display:block;font:400 15px/1.3 var(--font-tekst);color:var(--tekst-2)}
+/* znacznik listy: mały pas z logo */
+.lista-pasy{list-style:none;padding:0;margin:0}
+.lista-pasy li{position:relative;padding-left:22px}
+.lista-pasy li+li{margin-top:5px}
+.lista-pasy li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:.82em;background:var(--czerwien);
+  clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
+.link-dalej{font:600 18px/1.2 var(--font-tytul);color:#fff;text-decoration:none;border-bottom:2px solid var(--czerwien);padding-bottom:3px;display:inline-block}
+.link-dalej:hover{color:var(--czerwien-jasna)}
+
+/* ================= 6. NAGŁÓWEK I MENU ================= */
+.naglowek{position:sticky;top:0;z-index:50;background:rgba(14,15,17,.97);border-bottom:1px solid #23262B}
+.naglowek .kontener{height:calc(var(--naglowek) - 1px);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:block;flex:none}
+.logo img{width:auto;height:50px}
+.menu{display:flex;align-items:center;gap:clamp(16px,1.8vw,32px);margin:0;padding:0;list-style:none}
+.menu a{text-decoration:none;font:600 18px/1 var(--font-tytul);color:var(--tekst);display:inline-flex;align-items:center;min-height:44px}
+.menu a:not(.przycisk):hover,.menu a[aria-current="page"]{color:#fff}
+.menu a[aria-current="page"]:not(.przycisk){box-shadow:inset 0 -3px 0 var(--czerwien)}
+.menu a.sekcja-aktywna:not(.przycisk){box-shadow:inset 0 -3px 0 #5A5E66}
+.menu .przycisk{min-height:44px;padding:0 22px;font-size:17px;color:#fff}
+.menu .przycisk[aria-current="page"]{background:var(--czerwien-ciemna)}
+/* podmenu "Systemy" (komputer: rozwija się po najechaniu lub Tab) */
+.ma-podmenu{position:relative}
+.podmenu{list-style:none;margin:0;padding:10px 0;position:absolute;left:-18px;top:100%;min-width:300px;background:#15171A;border:1px solid var(--linia);
+  opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s}
+.ma-podmenu:hover .podmenu,.ma-podmenu:focus-within .podmenu{opacity:1;visibility:visible;transform:none}
+.podmenu a{display:flex;padding:4px 18px;font:400 16.5px/1.3 var(--font-tekst);min-height:40px;color:var(--tekst)}
+.podmenu a:hover{background:#1F2226}
+.podmenu a[aria-current="page"]{box-shadow:inset 3px 0 0 var(--czerwien)!important;color:#fff}
+.burger{display:none;width:48px;height:48px;border:0;background:none;cursor:pointer;padding:12px;margin-right:-10px}
+.burger span{display:block;height:3px;background:#fff;margin:5px 0;transition:transform .2s,opacity .2s}
+@media (max-width:1023px){
+  .burger{display:block}
+  .menu{position:fixed;inset:var(--naglowek) 0 auto 0;max-height:calc(100dvh - var(--naglowek));overflow-y:auto;flex-direction:column;align-items:stretch;gap:0;background:#121417;
+    border-bottom:1px solid var(--linia);padding:6px var(--margines) 24px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.2s}
+  .menu > li > a{width:100%;padding:12px 0;border-bottom:1px solid #22252A;font-size:21px}
+  .menu a[aria-current="page"]:not(.przycisk){box-shadow:inset 3px 0 0 var(--czerwien);padding-left:12px}
+  .menu .przycisk{margin-top:18px;min-height:52px;border:0;width:100%}
+  .podmenu{position:static;opacity:1;visibility:visible;transform:none;border:0;background:none;padding:2px 0 8px 14px;min-width:0}
+  .podmenu a{min-height:44px;font-size:17px;color:var(--tekst-2)}
+  .menu.otwarte{transform:none;opacity:1;visibility:visible}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+}
+
+/* ================= 7. PIERWSZY EKRAN (strona główna) =================
+   Pięć zdjęć z realizacji ułożonych jak pięć pasów logo Aura Audio:
+   pasy zbiegają się ku górze, środkowy jest najszerszy. Zdjęcia: img/hero/pas-1 ... pas-5.
+   Na telefonie zostają trzy pasy (2, 3 i 5). */
+.hero{position:relative;min-height:calc(100svh - var(--naglowek));display:flex;align-items:flex-end;background:#0B0C0D;color:#fff;overflow:hidden;isolation:isolate}
+.pasy{position:absolute;inset:0;z-index:-2}
+.pas{position:absolute;inset:0}
+.pas img{width:100%;height:100%;object-fit:cover}
+.pas-1{clip-path:polygon(0 0,17.6% 0,15.1% 100%,0 100%)}
+.pas-2{clip-path:polygon(18.4% 0,38.6% 0,35.6% 100%,15.9% 100%)}
+.pas-3{clip-path:polygon(39.4% 0,60.6% 0,64.4% 100%,36.4% 100%)}
+.pas-4{clip-path:polygon(61.4% 0,81.6% 0,84.1% 100%,65.2% 100%)}
+.pas-5{clip-path:polygon(82.4% 0,100% 0,100% 100%,84.9% 100%)}
+.pas-1 img{width:18%}
+.pas-2 img{width:24%;margin-left:15.5%}
+.pas-3 img{width:29%;margin-left:35.8%}
+.pas-4 img{width:24%;margin-left:61%}
+.pas-5 img{width:18%;margin-left:82%}
+@media (max-width:759px){
+  .pas-1,.pas-4{display:none}
+  .pas-2{clip-path:polygon(0 0,29.2% 0,25.2% 100%,0 100%)}
+  .pas-3{clip-path:polygon(30.8% 0,69.2% 0,74.8% 100%,26.8% 100%)}
+  .pas-5{clip-path:polygon(70.8% 0,100% 0,100% 100%,76.4% 100%)}
+  .pas-2 img{width:30%;margin-left:0}
+  .pas-3 img{width:50%;margin-left:26%}
+  .pas-5 img{width:30%;margin-left:70%}
+}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top,rgba(10,11,13,.95) 0%,rgba(10,11,13,.8) 34%,rgba(10,11,13,.2) 66%,rgba(10,11,13,0) 82%)}
+.hero-tresc{padding:clamp(72px,14vh,120px) 0 clamp(32px,6vh,72px)}
+.hero h1{font-size:clamp(36px,4.9vw,84px);max-width:17ch;text-wrap:balance}
+.hero-lead{margin-top:22px;font-size:clamp(18px,1.35vw,22px);line-height:1.5;max-width:56ch;color:#E3E5E8}
+.hero .telefon-duzy span{color:#C9CDD2}
+
+/* ================= 8. NAGŁÓWEK PODSTRONY =================
+   Tytuł po lewej, zdjęcie w kształcie pasa logo po prawej (na telefonie pod tytułem). */
+.strona-naglowek{position:relative;border-bottom:1px solid #1E2125;background:linear-gradient(180deg,#121417,rgba(14,15,17,0))}
+.strona-naglowek .kontener{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);align-items:end;padding:clamp(28px,4vw,56px) 0 clamp(36px,4.5vw,64px)}
+.strona-naglowek h1{font-size:clamp(36px,4.2vw,68px);text-wrap:balance}
+.strona-naglowek .lead{margin-top:16px}
+.strona-foto{margin:0;aspect-ratio:16/9;overflow:hidden;clip-path:polygon(5% 0,95% 0,100% 100%,0 100%);background:#0B0C0D}
+.strona-foto img{width:100%;height:100%;object-fit:cover}
+.okruszki{font-size:15px;color:var(--tekst-2);margin-bottom:18px}
+.okruszki ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 0}
+.okruszki li+li::before{content:"/";margin:0 8px;color:#5C6169}
+.okruszki a{color:var(--tekst-2);text-decoration:none;display:inline-block;padding:4px 0}
+.okruszki a:hover{color:#fff}
+@media (max-width:859px){.strona-naglowek .kontener{grid-template-columns:1fr}.strona-foto{aspect-ratio:2/1}}
+/* zakładki serii na podstronach systemów */
+.serie{border-bottom:1px solid #1E2125;background:rgba(14,15,17,.9)}
+.serie ul{list-style:none;margin:0 auto;padding:0;display:flex;gap:6px 26px;overflow-x:auto;scrollbar-width:none}
+.serie a{display:inline-flex;align-items:center;min-height:52px;white-space:nowrap;text-decoration:none;color:var(--tekst-2);font:600 17px/1 var(--font-tytul)}
+.serie a:hover{color:#fff}
+.serie a[aria-current="page"]{color:#fff;box-shadow:inset 0 -3px 0 var(--czerwien)}
+
+/* ================= 9. SEKCJE ================= */
+.sekcja{padding:clamp(60px,7.5vw,120px) 0}
+.sekcja--ciemna{background:var(--tlo-sekcji);border-block:1px solid #1C1F23}
+.sekcja-naglowek{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px 48px;margin-bottom:clamp(30px,3.6vw,52px)}
+.dwie-kolumny{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,5vw,96px);align-items:center}
+@media (max-width:899px){.dwie-kolumny{grid-template-columns:1fr}}
+.punkty{margin-top:34px;display:grid;gap:24px}
+.punkty h3{font-size:clamp(21px,1.6vw,25px);margin-bottom:6px}
+.punkty p{color:var(--tekst-2)}
+.podpis{margin-top:12px;font-size:15px;color:var(--tekst-2)}
+.pas-cta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px 40px;padding:clamp(28px,3.5vw,48px);background:var(--karta);
+  clip-path:polygon(1.2% 0,98.8% 0,100% 100%,0 100%)}
+.pas-cta h2{font-size:clamp(28px,2.8vw,42px)}
+.pas-cta p{color:var(--tekst-2);margin-top:8px;max-width:60ch}
+.wpisy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,56px)}
+.wpis{padding:24px 0;border-top:1px solid var(--linia)}
+.wpis h3{font-size:clamp(21px,1.6vw,26px);line-height:1.2}
+.wpis p{margin-top:10px;color:var(--tekst-2);font-size:16px}
+.wpis a{color:#fff;text-decoration-color:var(--czerwien)}
+@media (max-width:899px){.wpisy{grid-template-columns:1fr}}
+
+/* ================= 10. KARTY ZASTOSOWAŃ (strona główna, Systemy) ================= */
+.zastosowania{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.6vw,26px)}
+@media (min-width:1700px){.zastosowania{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media (max-width:1023px){.zastosowania{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:559px){.zastosowania{grid-template-columns:1fr}}
+.zast{position:relative;display:flex;flex-direction:column;background:var(--karta);text-decoration:none;color:var(--tekst);transition:background .2s}
+.zast:hover{background:var(--karta-2)}
+.zast-foto{aspect-ratio:4/3;overflow:hidden;background:#0B0C0D;clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
+.zast-foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.zast:hover .zast-foto img{transform:scale(1.04)}
+.zast-tresc{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
+.zast h3{font-size:clamp(23px,1.7vw,28px)}
+.zast p{margin-top:8px;color:var(--tekst-2);font-size:16px}
+.zast .seria{margin-top:auto;padding-top:14px;font:600 16px/1.3 var(--font-tytul);color:var(--czerwien-jasna)}
+
+/* ================= 11. PRODUKTY (podstrony serii) =================
+   Każdy produkt = <article class="produkt">. Nowy produkt: skopiuj cały blok. */
+.produkt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,80px);align-items:center;padding:clamp(40px,5vw,80px) 0;border-top:1px solid var(--linia)}
+.produkt:first-of-type{border-top:0;padding-top:0}
+.produkt:nth-of-type(even) .produkt-foto{order:2}
+@media (max-width:899px){.produkt{grid-template-columns:1fr}.produkt:nth-of-type(even) .produkt-foto{order:0}}
+.produkt-foto{margin:0;background:#0A0B0C;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
+.produkt-foto a{display:block;width:100%;height:100%}
+.produkt-foto img{width:100%;height:100%;object-fit:contain;padding:5%}
+.produkt-foto--kadr img{object-fit:cover;padding:0}
+.produkt-foto--jasne{background:#fff}
+.produkt h2{font-size:clamp(34px,3.4vw,52px)}
+.produkt-typ{margin-top:6px;color:var(--tekst-2);font-size:18px}
+.produkt-opis{margin-top:18px}
+.produkt-opis p+p{margin-top:12px}
+.parametry{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 28px;font-size:16px;color:var(--tekst-2)}
+.parametry li+li{margin-top:0}
+.produkt .akcje{margin-top:26px}
+.tabela-modeli{width:100%;border-collapse:collapse;margin-top:18px;font-size:16px}
+.tabela-modeli th,.tabela-modeli td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--linia)}
+.tabela-modeli th{font:600 17px/1.2 var(--font-tytul);color:#fff}
+.tabela-modeli td{color:var(--tekst-2)}
+.producent{margin-top:clamp(36px,4vw,60px);padding-top:24px;border-top:1px solid var(--linia);color:var(--tekst-2);max-width:86ch}
+.pliki{display:grid;gap:8px}
+.pliki a{color:#fff;text-decoration-color:var(--czerwien);display:inline-block;padding:3px 0}
+.pliki small{color:var(--tekst-2);font-size:14px}
+
+/* ================= 12. GALERIE I RZĘDY (przesuwane palcem i myszą) =================
+   Rząd zaczyna się równo z treścią strony i przewija się w prawo. */
+.rzad{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#3A3E45 transparent;padding-bottom:14px;
+  cursor:grab;overscroll-behavior-x:contain;padding-inline:max(var(--margines),calc((100% - 1680px)/2));scroll-padding-inline:max(var(--margines),calc((100% - 1680px)/2))}
+.rzad.ciagniety{cursor:grabbing;scroll-snap-type:none}
+.rzad.ciagniety *{user-select:none;pointer-events:none}
+.rzad > *{scroll-snap-align:start;flex:0 0 auto;margin:0}
+.panorama{height:clamp(220px,24vw,420px);aspect-ratio:18/5}
+.panorama img,.pion img{width:100%;height:100%;object-fit:cover}
+@media (max-width:759px){.panorama{aspect-ratio:auto;width:86vw}}
+.pion{height:clamp(320px,34vw,520px);aspect-ratio:1/2;background:#0B0C0D}
+.galeria-link{display:block;width:100%;height:100%;position:relative;cursor:zoom-in}
+.galeria-link::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,0);transition:background .2s}
+.galeria-link:hover::after{background:rgba(255,255,255,.06)}
+.rzad-podpis{margin-top:6px;font-size:15px;color:var(--tekst-2)}
+/* siatka zdjęć (Realizacje) */
+.siatka-zdjec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;grid-auto-flow:dense}
+.siatka-zdjec figure{margin:0;aspect-ratio:4/3;background:#0B0C0D;overflow:hidden}
+.siatka-zdjec .szeroka{grid-column:span 2;aspect-ratio:auto}
+.siatka-zdjec .wysoka{grid-row:span 2;aspect-ratio:auto}
+.siatka-zdjec img{width:100%;height:100%;object-fit:cover}
+@media (min-width:1700px){.siatka-zdjec{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media (max-width:899px){.siatka-zdjec{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.siatka-panoram{grid-template-columns:repeat(2,minmax(0,1fr))}
+.siatka-panoram figure{aspect-ratio:18/7}
+@media (min-width:1700px){.siatka-panoram{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:699px){.siatka-panoram{grid-template-columns:1fr}.siatka-panoram figure{aspect-ratio:18/8}}
+
+/* ================= 13. FILMY - FASADA (okładka + odtwórz) =================
+   Odtwarzacz YouTube/Vimeo ładuje się dopiero po kliknięciu (i po zgodzie). */
+.film{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#0B0C0D;border:0;padding:0;cursor:pointer;overflow:hidden;color:#fff;font:inherit}
+.film img{width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .3s}
+.film:hover img{transform:scale(1.03);opacity:.9}
+.film-play{position:absolute;left:50%;top:50%;width:76px;height:54px;transform:translate(-50%,-50%);background:var(--czerwien);
+  clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 100%,0 100%)}
+.film-play::after{content:"";position:absolute;left:31px;top:15px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent #fff}
+.film iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film-karta,.film-figura{position:relative}
+.film-zgoda{position:absolute;left:0;top:0;width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;text-align:center;
+  background:rgba(10,11,13,.9);font-size:15px;line-height:1.45;cursor:default}
+.film-zgoda .przycisk{min-height:46px;font-size:16px;padding:0 20px}
+.film-zgoda a{color:#fff}
+.film-zgoda p{max-width:44ch}
+.filmy-siatka{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 22px}
+@media (min-width:1900px){.filmy-siatka{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (max-width:1279px){.filmy-siatka{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:899px){.filmy-siatka{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:599px){.filmy-siatka{grid-template-columns:1fr}}
+.film-karta h3{margin-top:12px;font-size:20px;line-height:1.2}
+.film-karta p{margin-top:4px;font-size:15px;color:var(--tekst-2)}
+.film-karta[hidden]{display:none}
+.filmy-siatka:empty{min-height:120vh} /* miejsce na filmy, zanim wczyta je skrypt (bez przeskakiwania strony) */
+
+/* ================= 14. LIGHTBOX (powiększone zdjęcie) ================= */
+.lightbox{border:0;padding:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:rgba(6,7,8,.96);color:#fff}
+.lightbox::backdrop{background:rgba(6,7,8,.9)}
+.lightbox figure{margin:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 12px 16px}
+.lightbox img{max-width:100%;max-height:calc(100dvh - 120px);width:auto;height:auto;object-fit:contain}
+.lightbox figcaption{margin-top:12px;font-size:15px;color:#C9CDD2;text-align:center}
+.lb-btn{position:absolute;width:52px;height:52px;border:0;background:rgba(30,32,36,.85);color:#fff;font:400 30px/1 var(--font-tekst);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-btn:hover{background:var(--czerwien)}
+.lb-zamknij{top:8px;right:8px}
+.lb-poprz{left:8px;top:50%;transform:translateY(-50%)}
+.lb-nast{right:8px;top:50%;transform:translateY(-50%)}
+
+/* ================= 15. KONTAKT, FORMULARZ, MAPA ================= */
+.kontakt-siatka{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,96px)}
+@media (max-width:999px){.kontakt-siatka{grid-template-columns:1fr}}
+.formularz{background:var(--karta);padding:clamp(22px,3vw,44px);display:grid;gap:18px;align-content:start;align-self:start}
+.pole label{display:block;font:600 17px/1.3 var(--font-tytul);margin-bottom:6px;color:#fff}
+.pole input,.pole select,.pole textarea{width:100%;font:400 17px/1.4 var(--font-tekst);color:var(--tekst);background:#0F1113;border:1px solid #4A4F57;padding:13px 14px;border-radius:0}
+.pole textarea{min-height:140px;resize:vertical}
+.pole input:focus,.pole select:focus,.pole textarea:focus{outline:2px solid var(--czerwien-jasna);outline-offset:0;border-color:var(--czerwien-jasna)}
+.pola-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:599px){.pola-2{grid-template-columns:1fr}}
+.pulapka{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.zgoda{font-size:15px;color:var(--tekst-2);display:flex;gap:12px;align-items:flex-start}
+.zgoda input{margin-top:3px;width:22px;height:22px;flex:none;accent-color:var(--czerwien)}
+.zgoda a{color:#fff}
+.formularz-info{font-size:16px;padding:12px 14px;border-left:4px solid var(--czerwien);background:#111316}
+.formularz-info.ok{border-color:#2EA44F}
+.formularz-info[hidden]{display:none}
+.dane h2{font-size:clamp(26px,2.2vw,34px)}
+.dane address{font-style:normal;margin-top:12px;line-height:1.75}
+.dane a{color:#fff;text-decoration-color:var(--czerwien)}
+.dane-tel{display:inline-block;margin-top:14px;font:600 clamp(26px,2.4vw,34px)/1.1 var(--font-tytul);text-decoration:none!important}
+.mapa{margin-top:28px;aspect-ratio:16/10;background:#15171A;position:relative;border:1px solid var(--linia)}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa-zgoda{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;text-align:center;color:var(--tekst-2);font-size:15.5px}
+.mapa-podpis{margin-top:10px;font-size:15px;color:var(--tekst-2)}
+.mapa-podpis a{color:#fff}
+
+/* ================= 16. STOPKA ================= */
+.stopka{background:#0A0B0C;color:#B4B9C0;padding:56px 0 26px;font-size:15.5px;border-top:1px solid #1C1F23}
+.stopka-siatka{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.stopka h2{font-size:19px;color:#fff;margin-bottom:10px}
+.stopka ul{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.stopka li a{display:inline-block;padding:6px 0}
+.stopka a{color:#B4B9C0;text-decoration:none}
+.stopka a:hover{color:#fff}
+.stopka-marka img{width:141px;height:auto}
+.stopka-marka p{margin-top:14px;max-width:36ch}
+.stopka-dol{margin-top:40px;padding-top:18px;border-top:1px solid #23262B;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px}
+.stopka-dol > span,.stopka-dol .wylinka-badge{font-size:.875em}
+.stopka-dol a{min-height:24px}
+@media (max-width:899px){.stopka-siatka{grid-template-columns:1fr 1fr}.stopka-marka{grid-column:1/-1}}
+
+/* ================= 17. BANER COOKIES (zgoda na filmy YouTube i mapę Google) ================= */
+.cookies{position:fixed;right:16px;bottom:16px;z-index:90;max-width:540px;background:#1A1C20;border:1px solid #33373D;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);padding:14px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:14.5px;line-height:1.45;color:#D5D9DE}
+.cookies[hidden]{display:none}
+.cookies p{flex:1 1 300px}
+.cookies a{color:#fff}
+.cookies-przyciski{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{min-height:44px;padding:0 16px;font:600 16px/1 var(--font-tytul);cursor:pointer;border:0}
+.cookies .tak{background:var(--czerwien);color:#fff}
+.cookies .nie{background:#2E3137;color:#fff}
+/* na telefonie baner u góry (pod menu) - nie zasłania napisu i przycisku pierwszego ekranu */
+@media (max-width:759px){.cookies{top:calc(var(--naglowek) + 8px);bottom:auto;left:8px;right:8px;padding:12px;font-size:14px}.cookies button{flex:1}.cookies-przyciski{width:100%}}
+
+/* ================= 18. ZNAK WYKONAWCY (Wylinka) - oficjalny fragment, bez zmian ================= */
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://disaster26.github.io/auraaudio-strona/"},{"@type":"ListItem","position":2,"name":"Systemy","item":"https://disaster26.github.io/auraaudio-strona/systemy/"},{"@type":"ListItem","position":3,"name":"Restauracje, kościoły, sale","item":"https://disaster26.github.io/auraaudio-strona/systemy/glosniki-instalacyjne-seria-i/"}]}</script>
+</head>
+<body data-korzen="../../">
+<!-- ===================== BANER ZGODY (filmy YouTube/Vimeo i mapa Google) ===================== -->
+<div class="cookies" id="cookies" role="region" aria-label="Zgoda na treści zewnętrzne" hidden>
+  <p>Strona nie używa cookies analitycznych ani reklamowych. Filmy YouTube i mapa Google wczytają się dopiero po zgodzie, bo ich dostawcy zapisują własne pliki. <a href="../../polityka-prywatnosci/">Polityka prywatności</a></p>
+  <div class="cookies-przyciski"><button class="tak" type="button">Zgoda na filmy i mapę</button><button class="nie" type="button">Tylko niezbędne</button></div>
+</div>
+<script>try{if(!localStorage.getItem('aura-zgoda-media'))document.getElementById('cookies').hidden=false}catch(e){document.getElementById('cookies').hidden=false}</script>
+<a class="przeskocz" href="#tresc">Przejdź do treści</a>
+<!-- ===================== NAGŁÓWEK I MENU (taki sam na każdej podstronie) ===================== -->
+<header class="naglowek">
+  <div class="kontener">
+    <a class="logo" href="../../" aria-label="Aura Audio Polska - strona główna"><img src="../../img/logo-aura-audio-pl-52.webp" srcset="../../img/logo-aura-audio-pl-52.webp 1x, ../../img/logo-aura-audio-pl-104.webp 2x" width="141" height="52" alt="Aura Audio PL"></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="../../systemy/" class="sekcja-aktywna">Systemy</a><ul class="podmenu"><li><a href="../../systemy/seria-s/">Seria S - scena i plener</a></li><li><a href="../../systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="../../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="../../systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="../../systemy/glosniki-instalacyjne-seria-i/" aria-current="page">Głośniki instalacyjne - seria i</a></li><li><a href="../../systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="../../technologia/">Technologia</a></li><li><a href="../../realizacje/">Realizacje</a></li><li><a href="../../filmy/">Filmy</a></li><li><a href="../../artykuly/">Artykuły</a></li><li><a class="przycisk" href="../../kontakt/">Kontakt i odsłuch</a></li></ul></nav>
+  </div>
+</header>
+<main id="tresc">
+<section class="strona-naglowek">
+  <div class="kontener">
+    <div>
+      <nav class="okruszki" aria-label="Ścieżka"><ol><li><a href="../../">Strona główna</a></li><li><a href="../../systemy/">Systemy</a></li><li aria-current="page">Restauracje, kościoły, sale</li></ol></nav>
+      <h1>Głośniki instalacyjne - seria i</h1>
+      <p class="lead">Głośniki do restauracji, kościołów, sal i biur, które dobrze wyglądają, grają czysto i nie wymagają drogiej elektroniki.</p>
+      
+    </div>
+    <figure class="strona-foto"><img src="../../img/naglowki/i12-720.webp" srcset="../../img/naglowki/i12-480.webp 480w, ../../img/naglowki/i12-720.webp 720w, ../../img/naglowki/i12-960.webp 960w" sizes="(max-width: 859px) calc(100vw - 32px), 44vw" width="720" height="405" alt="Zestaw głośnikowy Aura Audio i12 na drewnianej ścianie" fetchpriority="high"></figure>
+  </div>
+</section>
+<nav class="serie" aria-label="Systemy według zastosowania"><ul class="kontener"><li><a href="../../systemy/">Wszystkie</a></li><li><a href="../../systemy/seria-s/">Scena i plener</a></li><li><a href="../../systemy/subbasy-xd-xq-seria-a/">Mocny bas</a></li><li><a href="../../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne</a></li><li><a href="../../systemy/monitory-studyjne-seria-f/">Studio i dom</a></li><li><a href="../../systemy/glosniki-instalacyjne-seria-i/" aria-current="page">Restauracje, kościoły, sale</a></li><li><a href="../../systemy/wzmacniacze/">Wzmacniacze</a></li></ul></nav><section class="sekcja"><div class="kontener">
+    <!-- ---------- PRODUKT: i3 (nowy produkt = skopiuj cały blok <article> ... </article>) ---------- -->
+    <article class="produkt" id="i3">
+      <figure class="produkt-foto" style="background:#000000"><a class="galeria-link" href="../../img/produkty/i3-800.webp" data-galeria="produkty" data-podpis="Głośnik instalacyjny Aura Audio i3"><img src="../../img/produkty/i3-480.webp" srcset="../../img/produkty/i3-300.webp 300w, ../../img/produkty/i3-480.webp 480w, ../../img/produkty/i3-800.webp 800w" sizes="(max-width: 899px) calc(100vw - 32px), 44vw" width="480" height="343" alt="Głośnik instalacyjny Aura Audio i3" loading="lazy" decoding="async"></a></figure>
+      <div>
+        <h2>i3</h2>
+        <p class="produkt-typ">Brzmienie i elegancja - projekt Stefana Lindforsa</p>
+        <div class="produkt-opis"><p>Obudowę i3 zaprojektowano we współpracy z nagradzanym fińskim designerem Stefanem Lindforsem. Wykonana z kompozytów, jest bardzo lekka i nie ma rezonansów własnych.</p><p>Opatentowany falowód zapewnia 3-calowemu głośnikowi szeroką dyspersję.</p></div>
+        <ul class="lista-pasy parametry"><li>Impedancja 16 Ohm</li><li>Płaska charakterystyka od 120 Hz</li><li>Obudowa z kompozytów</li></ul>
+        <div class="akcje"><a class="przycisk" href="../../kontakt/?produkt=i3#formularz">Zapytaj o i3</a></div>
+      </div>
+    </article>
+    <!-- ---------- PRODUKT: i3PR (nowy produkt = skopiuj cały blok <article> ... </article>) ---------- -->
+    <article class="produkt" id="i3pr">
+      <figure class="produkt-foto produkt-foto--jasne"><a class="galeria-link" href="../../img/produkty/i3pr-440.webp" data-galeria="produkty" data-podpis="Głośnik Aura Audio i3PR z membraną bierną, przód i tył"><img src="../../img/produkty/i3pr-440.webp" srcset="../../img/produkty/i3pr-440.webp 440w" sizes="(max-width: 899px) calc(100vw - 32px), 44vw" width="440" height="263" alt="Głośnik Aura Audio i3PR z membraną bierną, przód i tył" loading="lazy" decoding="async"></a></figure>
+      <div>
+        <h2>i3PR</h2>
+        <p class="produkt-typ">Pełne pasmo dzięki membranie biernej</p>
+        <div class="produkt-opis"><p>Odmiana i3 z membraną bierną (PR - passive radiator), która rozszerza dolne pasmo aż do 65 Hz.</p><p>W typowych zastosowaniach, np. przy muzyce w tle w restauracji, i3PR gra bez subwoofera, nawet z tanim wzmacniaczem naściennym. To wyraźnie obniża koszt całego systemu.</p></div>
+        <ul class="lista-pasy parametry"><li>Dolne pasmo do 65 Hz</li><li>Bez subwoofera w typowych zastosowaniach</li></ul>
+        <div class="akcje"><a class="przycisk" href="../../kontakt/?produkt=i3PR#formularz">Zapytaj o i3PR</a></div>
+      </div>
+    </article>
+    <!-- ---------- PRODUKT: i8 i i12 (nowy produkt = skopiuj cały blok <article> ... </article>) ---------- -->
+    <article class="produkt" id="i8-i12">
+      <figure class="produkt-foto produkt-foto--kadr"><a class="galeria-link" href="../../img/produkty/i12-800.webp" data-galeria="produkty" data-podpis="Zestaw głośnikowy Aura Audio i12"><img src="../../img/produkty/i12-480.webp" srcset="../../img/produkty/i12-300.webp 300w, ../../img/produkty/i12-480.webp 480w, ../../img/produkty/i12-800.webp 800w" sizes="(max-width: 899px) calc(100vw - 32px), 44vw" width="480" height="480" alt="Zestaw głośnikowy Aura Audio i12" loading="lazy" decoding="async"></a></figure>
+      <div>
+        <h2>i8 i i12</h2>
+        <p class="produkt-typ">Klasyczne zestawy dwudrożne</p>
+        <div class="produkt-opis"><p>Dobrze dobrane woofery pozwoliły na wysoki podział pasma, ok. 3 kHz.</p><p>Dzięki temu głośnik wysokotonowy nie musi grać w zakresie, w którym wytwarzałby nieprzyjemne dla ucha zniekształcenia.</p></div>
+        <ul class="lista-pasy parametry"><li>Podział pasma ok. 3 kHz</li><li>Zestawy dwudrożne</li></ul>
+        <div class="akcje"><a class="przycisk" href="../../kontakt/?produkt=i8 / i12#formularz">Zapytaj o i8 / i12</a></div>
+      </div>
+    </article>
+  </div></section>
+<section class="sekcja" aria-labelledby="pl-tytul" style="padding-top:0">
+  <div class="kontener dwie-kolumny" style="align-items:start">
+    <div><h2 id="pl-tytul" style="font-size:clamp(28px,2.6vw,40px)">Do pobrania</h2><ul class="lista-pasy pliki"><li><a href="https://irp.cdn-website.com/cb3ad5f1/files/uploaded/Aura+Audio+full+catalog+2027.pdf" target="_blank" rel="noopener">Pełny katalog Aura Audio 2027</a> <small>PDF</small></li></ul></div>
+    <p class="producent" style="margin-top:0;border-top:0;padding-top:0">Opisaliśmy tu wybrane produkty. Całą serię z parametrami technicznymi znajdziesz na stronie producenta:
+      <a href="https://www.auraaudio.fi/i-series" target="_blank" rel="noopener">auraaudio.fi/i-series</a>. Ceny i dostępność - telefonicznie lub przez <a href="../../kontakt/">formularz</a>.</p>
+  </div>
+</section><section class="sekcja" style="padding-top:0">
+  <div class="kontener">
+    <div class="pas-cta">
+      <div><h2>Umów odsłuch albo zapytaj o system</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i zorganizujemy prezentację - część systemów mamy w ciągłym użyciu.</p></div>
+      <div class="akcje" style="margin-top:0"><a class="przycisk" href="../../kontakt/">Napisz do nas</a><a class="telefon-duzy" href="tel:+48507037035">507 037 035<span>Przemysław Waszkiewicz</span></a></div>
+    </div>
+  </div>
+</section>
+</main>
+<!-- ===================== STOPKA ===================== -->
+<footer class="stopka">
+  <div class="kontener">
+    <div class="stopka-siatka">
+      <div class="stopka-marka">
+        <img src="../../img/logo-aura-audio-pl-52.webp" srcset="../../img/logo-aura-audio-pl-52.webp 1x, ../../img/logo-aura-audio-pl-104.webp 2x" width="141" height="52" alt="Aura Audio PL" loading="lazy" decoding="async">
+        <p>Przedstawiciel fińskiej marki Aura Audio w Polsce: Offstage Przemysław Waszkiewicz, ul. Perłowa 14, 83-031 Łęgowo.</p>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="tel:+48507037035">+48 507 037 035</a></li>
+          <li><a href="mailto:info@auraaudio.pl">info@auraaudio.pl</a></li>
+          <li><a href="../../kontakt/">Umów odsłuch</a></li>
+          <li><a href="https://www.facebook.com/aura.audio.polska/" target="_blank" rel="noopener">Facebook Aura Audio Polska</a></li>
+          <li><a href="https://www.youtube.com/@AuraAudioOfficial/" target="_blank" rel="noopener">YouTube Aura Audio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Systemy</h2>
+        <ul><li><a href="../../systemy/seria-s/">Scena i plener</a></li><li><a href="../../systemy/subbasy-xd-xq-seria-a/">Mocny bas</a></li><li><a href="../../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne</a></li><li><a href="../../systemy/monitory-studyjne-seria-f/">Studio i dom</a></li><li><a href="../../systemy/glosniki-instalacyjne-seria-i/">Restauracje, kościoły, sale</a></li><li><a href="../../systemy/wzmacniacze/">Wzmacniacze</a></li></ul>
+      </div>
+      <div>
+        <h2>Strona</h2>
+        <ul>
+          <li><a href="../../technologia/">Technologia</a></li>
+          <li><a href="../../realizacje/">Realizacje</a></li>
+          <li><a href="../../filmy/">Filmy</a></li>
+          <li><a href="../../artykuly/">Artykuły</a></li>
+          <li><a href="../../do-pobrania/">Do pobrania</a></li>
+          <li><a href="../../polityka-prywatnosci/">Polityka prywatności</a></li>
+          <li><a href="../../polityka-prywatnosci/#cookies" data-cookies>Ustawienia cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stopka-dol">
+      <span>&copy; <span id="rok">2026</span> Aura Audio Polska - Offstage Przemysław Waszkiewicz</span>
+      <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=auraaudio.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+  </div>
+</footer>
+<script src="../../js/main.js?v=1" defer></script>
+</body>
+</html>

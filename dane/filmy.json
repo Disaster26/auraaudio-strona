@@ -1,0 +1,20 @@
+{
+  "_instrukcja": "Lista filmów w galerii. Aby dodać film: skopiuj jeden blok { ... } i zmień id oraz tytuł. id to końcówka linku YouTube (youtube.com/watch?v=ID). Pole miniatura jest opcjonalne - bez niego strona pobierze miniaturę prosto z YouTube. Kolejność na liście = kolejność na stronie. Pierwsze 8 filmów widać od razu, reszta po kliknięciu 'Pokaż wszystkie'.",
+  "filmy": [
+    { "platforma": "youtube", "id": "VFMQoiS_Rso", "tytul": "Technologia Passive End Fire - patent firmy Aura Audio", "autor": "Przemysław Waszkiewicz", "jezyk": "PL", "miniatura": "img/filmy/VFMQoiS_Rso.webp" },
+    { "platforma": "youtube", "id": "ASMDqQoiZPE", "tytul": "Kolumny Aura Audio okiem realizatora dźwięku", "autor": "INFOMUSICFilms", "jezyk": "PL", "miniatura": "img/filmy/ASMDqQoiZPE.webp" },
+    { "platforma": "youtube", "id": "6OXaZ41TWWs", "tytul": "6 głośników, zero DSP i to działa?! Aura Audio F2", "autor": "0dB.pl", "jezyk": "PL", "miniatura": "img/filmy/6OXaZ41TWWs.webp" },
+    { "platforma": "youtube", "id": "RIquWzLt3xE", "tytul": "Aura Audio - studio, rental, instalacje - Prolight & Sound 2025", "autor": "INFOMUSICFilms", "jezyk": "PL", "miniatura": "img/filmy/RIquWzLt3xE.webp" },
+    { "platforma": "youtube", "id": "oWk3I6TdpXc", "tytul": "Aura Audio S1D - Prolight+Sound 2024", "autor": "Przemysław Waszkiewicz", "jezyk": "PL", "miniatura": "img/filmy/oWk3I6TdpXc.webp" },
+    { "platforma": "youtube", "id": "ZtNacE6YjOU", "tytul": "S1D on the road 2026", "autor": "Aura Audio Official", "jezyk": "EN", "miniatura": "img/filmy/ZtNacE6YjOU.webp" },
+    { "platforma": "vimeo", "id": "823737772", "tytul": "Passive End Fire Technology - jak to działa", "autor": "Aura Audio", "jezyk": "EN", "miniatura": "img/filmy/vimeo_823737772.webp" },
+    { "platforma": "youtube", "id": "d-em4CJFK-Y", "tytul": "Aura Audio - Step inside 2025", "autor": "Aura Audio Official", "jezyk": "EN", "miniatura": "img/filmy/d-em4CJFK-Y.webp" },
+    { "platforma": "youtube", "id": "fdNHpY2VtaM", "tytul": "S-series with Turku Audio 2025", "autor": "Aura Audio Official", "jezyk": "EN", "miniatura": "img/filmy/fdNHpY2VtaM.webp" },
+    { "platforma": "youtube", "id": "iw5nsMpVeAc", "tytul": "S-series with AVR360 2025", "autor": "Aura Audio Official", "jezyk": "EN", "miniatura": "img/filmy/iw5nsMpVeAc.webp" },
+    { "platforma": "youtube", "id": "h2sDvdb-V9U", "tytul": "S-series with Mixa 2025", "autor": "Aura Audio Official", "jezyk": "EN", "miniatura": "img/filmy/h2sDvdb-V9U.webp" },
+    { "platforma": "youtube", "id": "RkeRbyoI0nE", "tytul": "Sixthsound 2025", "autor": "Aura Audio Official", "jezyk": "EN", "miniatura": "img/filmy/RkeRbyoI0nE.webp" },
+    { "platforma": "youtube", "id": "FaifNaQZhms", "tytul": "Aura Audio na targach PLASA 2019", "autor": "Aura Audio", "jezyk": "EN", "miniatura": "img/filmy/FaifNaQZhms.webp" },
+    { "platforma": "youtube", "id": "uMqSyjFMZZE", "tytul": "Aura Audio & EM Acoustics - Sri Lanka", "autor": "Flash Back Ruwan Fernando", "jezyk": "EN", "miniatura": "img/filmy/uMqSyjFMZZE.webp" },
+    { "platforma": "youtube", "id": "fjMzNenK0K0", "tytul": "Aura Audio A1 Speaker System - BPM 2017", "autor": "Cosmic Audio", "jezyk": "EN", "miniatura": "img/filmy/fjMzNenK0K0.webp" }
+  ]
+}
