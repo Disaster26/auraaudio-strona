@@ -61,7 +61,7 @@
    Kolory marki zmienia się TYLKO tutaj - działają na wszystkich podstronach.
    Grafit = pasy z logo Aura Audio, czerwień = "PL" z logo. */
 :root{
-  --tlo:#0E0F11;            /* tło strony (ciemne, ze stałym wzorem fal) */
+  --tlo:#0E0F11;            /* tło strony (ciemne, ze stałym wzorem siatki głośnika) */
   --tlo-sekcji:rgba(255,255,255,.025); /* tło co drugiej sekcji (półprzezroczyste - wzór prześwituje) */
   --karta:#181A1E;          /* karty produktów, formularz */
   --karta-2:#202328;
@@ -101,11 +101,11 @@ b,strong{font-family:var(--font-tytul);font-weight:600}
 .tekst ul{padding-left:22px;margin:14px 0 0}
 
 /* ================= 4. WZÓR W TLE =================
-   Stały (nieruchomy przy przewijaniu) wzór łuków - czoła fali z logo Aura Audio.
-   Warstwa jest przyklejona do okna, więc nie obciąża przewijania. */
+   Stały (nieruchomy przy przewijaniu) wzór siatki maskownicy głośnika Aura Audio
+   (ze zdjęcia od klienta 18.11). Kafel 256x264 px, przyciemniony do tła strony,
+   wyświetlany w połowie rozmiaru (ostry na ekranach retina). Podmiana: img/tlo/siatka-glosnika.webp */
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='56' viewBox='0 0 260 56'%3E%3Cpath d='M0 40Q130 4 260 40' fill='none' stroke='%23fff' stroke-width='1.1'/%3E%3C/svg%3E");
-  background-size:260px 56px;opacity:.075}
+  background:var(--tlo) url(img/tlo/siatka-glosnika.webp) 0 0/128px 132px repeat}
 
 /* ================= 5. PRZYCISKI I LISTY ================= */
 /* przycisk w kształcie środkowego pasa logo (trapez rozszerzający się ku dołowi) */
