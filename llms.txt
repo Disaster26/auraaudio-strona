@@ -18,4 +18,4 @@ Firma: OFFSTAGE PRZEMYSŁAW WASZKIEWICZ, ul. Perłowa 14, 83-031 Łęgowo (magaz
 - [Filmy](https://disaster26.github.io/auraaudio-strona/filmy/): prezentacje i testy
 - [Artykuły](https://disaster26.github.io/auraaudio-strona/artykuly/): infosound.pl, realizator.pl, Faital Pro, Prolight+Sound
 - [Do pobrania](https://disaster26.github.io/auraaudio-strona/do-pobrania/): katalog 2027, pliki GLL
-- [Kontakt](https://disaster26.github.io/auraaudio-strona/kontakt/): formularz, telefon, odsłuch
+- [Kontakt](https://disaster26.github.io/auraaudio-strona/kontakt/): formularz, telefon, wycena

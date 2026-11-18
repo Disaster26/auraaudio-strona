@@ -193,7 +193,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(10,11,13,.95) 0%,rgba(10,11,13,.8) 34%,rgba(10,11,13,.2) 66%,rgba(10,11,13,0) 82%)}
 .hero-tresc{padding:clamp(72px,14vh,120px) 0 clamp(32px,6vh,72px)}
-.hero h1{font-size:clamp(36px,4.9vw,84px);max-width:17ch;text-wrap:balance}
+.hero h1{font-size:clamp(28px,1.2rem + 2.6vw,60px);max-width:20ch;text-wrap:balance}
 .hero-lead{margin-top:22px;font-size:clamp(18px,1.35vw,22px);line-height:1.5;max-width:56ch;color:#E3E5E8}
 .hero .telefon-duzy span{color:#C9CDD2}
 
@@ -201,7 +201,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
    Tytuł po lewej, zdjęcie w kształcie pasa logo po prawej (na telefonie pod tytułem). */
 .strona-naglowek{position:relative;border-bottom:1px solid #1E2125;background:linear-gradient(180deg,#121417,rgba(14,15,17,0))}
 .strona-naglowek .kontener{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);align-items:end;padding:clamp(28px,4vw,56px) 0 clamp(36px,4.5vw,64px)}
-.strona-naglowek h1{font-size:clamp(36px,4.2vw,68px);text-wrap:balance}
+.strona-naglowek h1{font-size:clamp(30px,1.1rem + 2.4vw,56px);text-wrap:balance}
 .strona-naglowek .lead{margin-top:16px}
 .strona-foto{margin:0;aspect-ratio:16/9;overflow:hidden;clip-path:polygon(5% 0,95% 0,100% 100%,0 100%);background:#0B0C0D}
 .strona-foto img{width:100%;height:100%;object-fit:cover}
@@ -248,7 +248,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .zast:hover{background:var(--karta-2)}
 .zast-foto{aspect-ratio:4/3;overflow:hidden;background:#0B0C0D;clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
 .zast-foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.zast:hover .zast-foto img{transform:scale(1.04)}
+.zast:hover .zast-foto img{transform:scale(calc(var(--skala,1) * 1.04))}
 .zast-tresc{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
 .zast h3{font-size:clamp(23px,1.7vw,28px)}
 .zast p{margin-top:8px;color:var(--tekst-2);font-size:16px}
@@ -266,6 +266,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .produkt-foto img{width:100%;height:100%;object-fit:contain;padding:5%}
 .produkt-foto--kadr img{object-fit:cover;padding:0}
 .produkt-foto--jasne{background:#fff}
+/* KADR ZDJĘCIA W TRAPEZOWYM OKIENKU (główna grafika, nagłówki podstron, kafle zastosowań)
+   W znaczniku <img> jest style="--x:50%;--y:50%;--skala:1" - wystarczy zmienić liczby:
+   --x / --y = który fragment zdjęcia widać (0% = lewo/góra, 50% = środek, 100% = prawo/dół)
+   --skala   = przybliżenie (1 = bez powiększenia, 1.2 = o 20% bliżej) */
+.pas img,.strona-foto img,.zast-foto img{object-position:var(--x,50%) var(--y,50%);transform:scale(var(--skala,1));transform-origin:var(--x,50%) var(--y,50%)}
 .produkt h2{font-size:clamp(34px,3.4vw,52px)}
 .produkt-typ{margin-top:6px;color:var(--tekst-2);font-size:18px}
 .produkt-opis{margin-top:18px}
@@ -431,7 +436,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   <div class="kontener">
     <a class="logo" href="../" aria-label="Aura Audio Polska - strona główna"><img src="../img/logo-aura-audio-pl-52.webp" srcset="../img/logo-aura-audio-pl-52.webp 1x, ../img/logo-aura-audio-pl-104.webp 2x" width="141" height="52" alt="Aura Audio PL"></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
-    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="../systemy/">Systemy</a><ul class="podmenu"><li><a href="../systemy/seria-s/">Seria S - scena i plener</a></li><li><a href="../systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="../systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="../systemy/glosniki-instalacyjne-seria-i/">Głośniki instalacyjne - seria i</a></li><li><a href="../systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="../technologia/">Technologia</a></li><li><a href="../realizacje/">Realizacje</a></li><li><a href="../filmy/" aria-current="page">Filmy</a></li><li><a href="../artykuly/">Artykuły</a></li><li><a class="przycisk" href="../kontakt/">Kontakt i odsłuch</a></li></ul></nav>
+    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="../systemy/">Systemy</a><ul class="podmenu"><li><a href="../systemy/seria-s/">Seria S - scena i plener</a></li><li><a href="../systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="../systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="../systemy/glosniki-instalacyjne-seria-i/">Głośniki instalacyjne - seria i</a></li><li><a href="../systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="../technologia/">Technologia</a></li><li><a href="../realizacje/">Realizacje</a></li><li><a href="../filmy/" aria-current="page">Filmy</a></li><li><a href="../artykuly/">Artykuły</a></li><li><a class="przycisk" href="../kontakt/">Kontakt i wycena</a></li></ul></nav>
   </div>
 </header>
 <main id="tresc">
@@ -462,7 +467,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <section class="sekcja" style="padding-top:0">
   <div class="kontener">
     <div class="pas-cta">
-      <div><h2>Umów odsłuch albo zapytaj o system</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i zorganizujemy prezentację - część systemów mamy w ciągłym użyciu.</p></div>
+      <div><h2>Zapytaj o system i wycenę</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i przygotujemy wycenę.</p></div>
       <div class="akcje" style="margin-top:0"><a class="przycisk" href="../kontakt/">Napisz do nas</a><a class="telefon-duzy" href="tel:+48507037035">507 037 035<span>Przemysław Waszkiewicz</span></a></div>
     </div>
   </div>
@@ -481,7 +486,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
         <ul>
           <li><a href="tel:+48507037035">+48 507 037 035</a></li>
           <li><a href="mailto:info@auraaudio.pl">info@auraaudio.pl</a></li>
-          <li><a href="../kontakt/">Umów odsłuch</a></li>
+          <li><a href="../kontakt/">Zapytaj o wycenę</a></li>
           <li><a href="https://www.facebook.com/aura.audio.polska/" target="_blank" rel="noopener">Facebook Aura Audio Polska</a></li>
           <li><a href="https://www.youtube.com/@AuraAudioOfficial/" target="_blank" rel="noopener">YouTube Aura Audio</a></li>
         </ul>
@@ -509,6 +514,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     </div>
   </div>
 </footer>
-<script src="../js/main.js?v=1" defer></script>
+<script src="../js/main.js?v=2" defer></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <!-- Aura Audio Polska - strona statyczna (HTML + CSS + JS). Wygląd: css/style.css (kolory na górze pliku),
      skrypt: js/main.js, lista filmów: dane/filmy.json, formularz: wyslij.php. Instrukcja: Instrukcja_strony_auraaudio.pl.pdf -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nagłośnienie Aura Audio w Polsce - kolumny, monitory, wzmacniacze | Aura Audio Polska</title>
-<meta name="description" content="Fińskie nagłośnienie Aura Audio w Polsce: kolumny passive end-fired S1D i S2, monitory sceniczne i studyjne F2, głośniki instalacyjne, wzmacniacze. Odsłuch i dobór.">
+<title>Nagłośnienie Aura Audio w Polsce - kolumny, monitory, wzmacniacze</title>
+<meta name="description" content="Fińskie nagłośnienie Aura Audio w Polsce: kolumny passive end-fired S1D i S2, monitory sceniczne i studyjne, głośniki instalacyjne i wzmacniacze. Dobór i wycena.">
 <!-- WERSJA TESTOWA: ukryta przed Google (noindex). Na auraaudio.pl jest index, follow. -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://disaster26.github.io/auraaudio-strona/">
@@ -18,8 +18,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Aura Audio Polska">
-<meta property="og:title" content="Nagłośnienie Aura Audio w Polsce - kolumny, monitory, wzmacniacze | Aura Audio Polska">
-<meta property="og:description" content="Fińskie nagłośnienie Aura Audio w Polsce: kolumny passive end-fired S1D i S2, monitory sceniczne i studyjne F2, głośniki instalacyjne, wzmacniacze. Odsłuch i dobór.">
+<meta property="og:title" content="Nagłośnienie Aura Audio w Polsce - kolumny, monitory, wzmacniacze">
+<meta property="og:description" content="Fińskie nagłośnienie Aura Audio w Polsce: kolumny passive end-fired S1D i S2, monitory sceniczne i studyjne, głośniki instalacyjne i wzmacniacze. Dobór i wycena.">
 <meta property="og:url" content="https://disaster26.github.io/auraaudio-strona/">
 <meta property="og:image" content="https://disaster26.github.io/auraaudio-strona/img/og-aura-audio-polska.jpg">
 <meta property="og:image:width" content="1200">
@@ -194,7 +194,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(10,11,13,.95) 0%,rgba(10,11,13,.8) 34%,rgba(10,11,13,.2) 66%,rgba(10,11,13,0) 82%)}
 .hero-tresc{padding:clamp(72px,14vh,120px) 0 clamp(32px,6vh,72px)}
-.hero h1{font-size:clamp(36px,4.9vw,84px);max-width:17ch;text-wrap:balance}
+.hero h1{font-size:clamp(28px,1.2rem + 2.6vw,60px);max-width:20ch;text-wrap:balance}
 .hero-lead{margin-top:22px;font-size:clamp(18px,1.35vw,22px);line-height:1.5;max-width:56ch;color:#E3E5E8}
 .hero .telefon-duzy span{color:#C9CDD2}
 
@@ -202,7 +202,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
    Tytuł po lewej, zdjęcie w kształcie pasa logo po prawej (na telefonie pod tytułem). */
 .strona-naglowek{position:relative;border-bottom:1px solid #1E2125;background:linear-gradient(180deg,#121417,rgba(14,15,17,0))}
 .strona-naglowek .kontener{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);align-items:end;padding:clamp(28px,4vw,56px) 0 clamp(36px,4.5vw,64px)}
-.strona-naglowek h1{font-size:clamp(36px,4.2vw,68px);text-wrap:balance}
+.strona-naglowek h1{font-size:clamp(30px,1.1rem + 2.4vw,56px);text-wrap:balance}
 .strona-naglowek .lead{margin-top:16px}
 .strona-foto{margin:0;aspect-ratio:16/9;overflow:hidden;clip-path:polygon(5% 0,95% 0,100% 100%,0 100%);background:#0B0C0D}
 .strona-foto img{width:100%;height:100%;object-fit:cover}
@@ -249,7 +249,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .zast:hover{background:var(--karta-2)}
 .zast-foto{aspect-ratio:4/3;overflow:hidden;background:#0B0C0D;clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
 .zast-foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.zast:hover .zast-foto img{transform:scale(1.04)}
+.zast:hover .zast-foto img{transform:scale(calc(var(--skala,1) * 1.04))}
 .zast-tresc{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
 .zast h3{font-size:clamp(23px,1.7vw,28px)}
 .zast p{margin-top:8px;color:var(--tekst-2);font-size:16px}
@@ -267,6 +267,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .produkt-foto img{width:100%;height:100%;object-fit:contain;padding:5%}
 .produkt-foto--kadr img{object-fit:cover;padding:0}
 .produkt-foto--jasne{background:#fff}
+/* KADR ZDJĘCIA W TRAPEZOWYM OKIENKU (główna grafika, nagłówki podstron, kafle zastosowań)
+   W znaczniku <img> jest style="--x:50%;--y:50%;--skala:1" - wystarczy zmienić liczby:
+   --x / --y = który fragment zdjęcia widać (0% = lewo/góra, 50% = środek, 100% = prawo/dół)
+   --skala   = przybliżenie (1 = bez powiększenia, 1.2 = o 20% bliżej) */
+.pas img,.strona-foto img,.zast-foto img{object-position:var(--x,50%) var(--y,50%);transform:scale(var(--skala,1));transform-origin:var(--x,50%) var(--y,50%)}
 .produkt h2{font-size:clamp(34px,3.4vw,52px)}
 .produkt-typ{margin-top:6px;color:var(--tekst-2);font-size:18px}
 .produkt-opis{margin-top:18px}
@@ -417,7 +422,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://disaster26.github.io/auraaudio-strona/#firma","name":"Aura Audio Polska","legalName":"OFFSTAGE PRZEMYSŁAW WASZKIEWICZ","description":"Przedstawiciel fińskiej marki Aura Audio w Polsce: systemy nagłośnieniowe, monitory sceniczne i studyjne, głośniki instalacyjne i wzmacniacze. Odsłuch i dobór systemu.","url":"https://disaster26.github.io/auraaudio-strona/","telephone":"+48507037035","email":"info@auraaudio.pl","logo":{"@type":"ImageObject","url":"https://disaster26.github.io/auraaudio-strona/img/logo-aura-audio-pl-google.png","width":420,"height":420},"image":"https://disaster26.github.io/auraaudio-strona/img/og-aura-audio-polska.jpg","address":{"@type":"PostalAddress","streetAddress":"ul. Perłowa 14","postalCode":"83-031","addressLocality":"Łęgowo","addressRegion":"pomorskie","addressCountry":"PL"},"areaServed":{"@type":"Country","name":"Polska"},"founder":{"@type":"Person","name":"Przemysław Waszkiewicz"},"taxID":"5451652055","hasMap":"https://maps.app.goo.gl/omJYBVoV5g7FdTLWA","brand":{"@type":"Brand","name":"Aura Audio"},"sameAs":["https://www.facebook.com/aura.audio.polska/"]},{"@context":"https://schema.org","@type":"WebSite","name":"Aura Audio Polska","url":"https://disaster26.github.io/auraaudio-strona/","inLanguage":"pl-PL","publisher":{"@id":"https://disaster26.github.io/auraaudio-strona/#firma"}}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://disaster26.github.io/auraaudio-strona/#firma","name":"Aura Audio Polska","legalName":"OFFSTAGE PRZEMYSŁAW WASZKIEWICZ","description":"Przedstawiciel fińskiej marki Aura Audio w Polsce: systemy nagłośnieniowe, monitory sceniczne i studyjne, głośniki instalacyjne i wzmacniacze. Dobór systemu i wycena.","url":"https://disaster26.github.io/auraaudio-strona/","telephone":"+48507037035","email":"info@auraaudio.pl","logo":{"@type":"ImageObject","url":"https://disaster26.github.io/auraaudio-strona/img/logo-aura-audio-pl-google.png","width":420,"height":420},"image":"https://disaster26.github.io/auraaudio-strona/img/og-aura-audio-polska.jpg","address":{"@type":"PostalAddress","streetAddress":"ul. Perłowa 14","postalCode":"83-031","addressLocality":"Łęgowo","addressRegion":"pomorskie","addressCountry":"PL"},"areaServed":{"@type":"Country","name":"Polska"},"founder":{"@type":"Person","name":"Przemysław Waszkiewicz"},"taxID":"5451652055","hasMap":"https://maps.app.goo.gl/omJYBVoV5g7FdTLWA","brand":{"@type":"Brand","name":"Aura Audio"},"sameAs":["https://www.facebook.com/aura.audio.polska/"]},{"@context":"https://schema.org","@type":"WebSite","name":"Aura Audio Polska","url":"https://disaster26.github.io/auraaudio-strona/","inLanguage":"pl-PL","publisher":{"@id":"https://disaster26.github.io/auraaudio-strona/#firma"}}]</script>
 </head>
 <body data-korzen="">
 <!-- ===================== BANER ZGODY (filmy YouTube/Vimeo i mapa Google) ===================== -->
@@ -432,7 +437,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   <div class="kontener">
     <a class="logo" href="./" aria-label="Aura Audio Polska - strona główna"><img src="img/logo-aura-audio-pl-52.webp" srcset="img/logo-aura-audio-pl-52.webp 1x, img/logo-aura-audio-pl-104.webp 2x" width="141" height="52" alt="Aura Audio PL"></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
-    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="systemy/">Systemy</a><ul class="podmenu"><li><a href="systemy/seria-s/">Seria S - scena i plener</a></li><li><a href="systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="systemy/glosniki-instalacyjne-seria-i/">Głośniki instalacyjne - seria i</a></li><li><a href="systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="technologia/">Technologia</a></li><li><a href="realizacje/">Realizacje</a></li><li><a href="filmy/">Filmy</a></li><li><a href="artykuly/">Artykuły</a></li><li><a class="przycisk" href="kontakt/">Kontakt i odsłuch</a></li></ul></nav>
+    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="systemy/">Systemy</a><ul class="podmenu"><li><a href="systemy/seria-s/">Seria S - scena i plener</a></li><li><a href="systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="systemy/glosniki-instalacyjne-seria-i/">Głośniki instalacyjne - seria i</a></li><li><a href="systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="technologia/">Technologia</a></li><li><a href="realizacje/">Realizacje</a></li><li><a href="filmy/">Filmy</a></li><li><a href="artykuly/">Artykuły</a></li><li><a class="przycisk" href="kontakt/">Kontakt i wycena</a></li></ul></nav>
   </div>
 </header>
 
@@ -443,18 +448,18 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
      Podmiana zdjęcia = podmiana obu plików pas-N-300.webp i pas-N-500.webp (te same nazwy).
      pas-1 i pas-4 są tylko na komputerze (<picture> z media), żeby telefon ich nie pobierał. -->
 <section class="hero" aria-labelledby="hero-tytul">
-  <div class="pasy" aria-hidden="true">
-    <div class="pas pas-1"><picture><source media="(min-width: 760px)" srcset="img/hero/pas-1-300.webp 300w, img/hero/pas-1-400.webp 400w, img/hero/pas-1-500.webp 500w" sizes="24vw"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="500" height="1000" alt="" style="object-position:40% 50%"></picture></div>
-    <div class="pas pas-2"><img src="img/hero/pas-2-500.webp" srcset="img/hero/pas-2-300.webp 300w, img/hero/pas-2-400.webp 400w, img/hero/pas-2-500.webp 500w" sizes="(max-width: 759px) 26vw, 24vw" width="500" height="1000" alt="" style="object-position:45% 50%" fetchpriority="low"></div>
-    <div class="pas pas-3"><img src="img/hero/pas-3-500.webp" srcset="img/hero/pas-3-300.webp 300w, img/hero/pas-3-400.webp 400w, img/hero/pas-3-500.webp 500w" sizes="(max-width: 759px) 40vw, 29vw" width="500" height="1000" alt="" style="object-position:50% 40%" fetchpriority="high"></div>
-    <div class="pas pas-4"><picture><source media="(min-width: 760px)" srcset="img/hero/pas-4-300.webp 300w, img/hero/pas-4-400.webp 400w, img/hero/pas-4-500.webp 500w" sizes="24vw"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="500" height="1000" alt="" style="object-position:50% 50%"></picture></div>
-    <div class="pas pas-5"><img src="img/hero/pas-5-500.webp" srcset="img/hero/pas-5-300.webp 300w, img/hero/pas-5-400.webp 400w, img/hero/pas-5-500.webp 500w" sizes="(max-width: 759px) 26vw, 18vw" width="500" height="1000" alt="" style="object-position:50% 45%" fetchpriority="low"></div>
+  <div class="pasy">
+    <div class="pas pas-1"><picture><source media="(min-width: 760px)" srcset="img/hero/pas-1-300.webp 300w, img/hero/pas-1-400.webp 400w, img/hero/pas-1-500.webp 500w" sizes="24vw"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="500" height="1000" alt="System liniowy Aura Audio S2 w sali koncertowej" style="--x:40%;--y:50%;--skala:1"></picture></div>
+    <div class="pas pas-2"><img src="img/hero/pas-2-500.webp" srcset="img/hero/pas-2-300.webp 300w, img/hero/pas-2-400.webp 400w, img/hero/pas-2-500.webp 500w" sizes="(max-width: 759px) 26vw, 24vw" width="500" height="1000" alt="Kolumna Aura Audio S1D na statywie" style="--x:45%;--y:50%;--skala:1" fetchpriority="low"></div>
+    <div class="pas pas-3"><img src="img/hero/pas-3-500.webp" srcset="img/hero/pas-3-300.webp 300w, img/hero/pas-3-400.webp 400w, img/hero/pas-3-500.webp 500w" sizes="(max-width: 759px) 40vw, 29vw" width="500" height="1000" alt="Koncert plenerowy z nagłośnieniem Aura Audio" style="--x:50%;--y:40%;--skala:1" fetchpriority="high"></div>
+    <div class="pas pas-4"><picture><source media="(min-width: 760px)" srcset="img/hero/pas-4-300.webp 300w, img/hero/pas-4-400.webp 400w, img/hero/pas-4-500.webp 500w" sizes="24vw"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="500" height="1000" alt="Kolumny Aura Audio S1D i subbas na gali" style="--x:50%;--y:50%;--skala:1"></picture></div>
+    <div class="pas pas-5"><img src="img/hero/pas-5-500.webp" srcset="img/hero/pas-5-300.webp 300w, img/hero/pas-5-400.webp 400w, img/hero/pas-5-500.webp 500w" sizes="(max-width: 759px) 26vw, 18vw" width="500" height="1000" alt="Grono Aura Audio S2 podwieszone na wieży" style="--x:50%;--y:45%;--skala:1" fetchpriority="low"></div>
   </div>
   <div class="kontener hero-tresc">
     <h1 id="hero-tytul">Nagłośnienie Aura Audio w Polsce - dźwięk tam, gdzie są słuchacze</h1>
-    <p class="hero-lead">Fińskie systemy, w których kierunkowość zapewnia sama konstrukcja kolumny, a nie korekcja w procesorze. Wybrane modele pokażemy i damy posłuchać na żywo.</p>
+    <p class="hero-lead">Fińskie systemy, w których kierunkowość zapewnia sama konstrukcja kolumny, a nie korekcja w procesorze. Doradzimy, co wybrać, i przygotujemy wycenę.</p>
     <div class="akcje">
-      <a class="przycisk" href="kontakt/">Umów odsłuch</a>
+      <a class="przycisk" href="kontakt/">Zapytaj o wycenę</a>
       <a class="telefon-duzy" href="tel:+48507037035">507 037 035<span>Przemysław Waszkiewicz</span></a>
     </div>
   </div>
@@ -473,7 +478,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
       </div>
       <p style="margin-top:30px"><a class="link-dalej" href="technologia/">Więcej o technologii i marce</a></p>
     </div>
-    <figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="VFMQoiS_Rso" aria-label="Odtwórz film: Technologia Passive End Fire - patent firmy Aura Audio"><img src="img/filmy/VFMQoiS_Rso.webp" width="640" height="360" alt="" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">Technologia Passive End Fire - patent firmy Aura Audio (Przemysław Waszkiewicz, PL)</figcaption></figure>
+    <figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="VFMQoiS_Rso" aria-label="Odtwórz film: Technologia Passive End Fire - patent firmy Aura Audio"><img src="img/filmy/VFMQoiS_Rso.webp" width="640" height="360" alt="Kadr z filmu: Technologia Passive End Fire - patent firmy Aura Audio" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">Technologia Passive End Fire - patent firmy Aura Audio (Przemysław Waszkiewicz, PL)</figcaption></figure>
   </div>
 </section>
 
@@ -486,22 +491,22 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
       <a class="link-dalej" href="systemy/">Wszystkie systemy</a>
     </div>
     <div class="zastosowania"><a class="zast" href="systemy/seria-s/">
-        <div class="zast-foto"><img src="img/kafle/scena-680.webp" srcset="img/kafle/scena-400.webp 400w, img/kafle/scena-680.webp 680w, img/kafle/scena-880.webp 880w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="680" height="510" alt="Podwieszony system liniowy Aura Audio S2 przy scenie plenerowej" loading="lazy" decoding="async"></div>
+        <div class="zast-foto"><img src="img/kafle/scena-680.webp" srcset="img/kafle/scena-400.webp 400w, img/kafle/scena-680.webp 680w, img/kafle/scena-880.webp 880w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="680" height="510" alt="Podwieszony system liniowy Aura Audio S2 przy scenie plenerowej" loading="lazy" decoding="async" style="--x:50%;--y:50%;--skala:1"></div>
         <div class="zast-tresc"><h3>Scena i plener</h3><p>Kolumny i system liniowy, które grają do publiczności, a nie na scenę.</p><span class="seria">Seria S</span></div>
       </a><a class="zast" href="systemy/subbasy-xd-xq-seria-a/">
-        <div class="zast-foto"><img src="img/kafle/bas-500.webp" srcset="img/kafle/bas-400.webp 400w, img/kafle/bas-500.webp 500w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="500" height="375" alt="Subbasy Aura Audio przed sceną plenerową" loading="lazy" decoding="async"></div>
+        <div class="zast-foto"><img src="img/kafle/bas-500.webp" srcset="img/kafle/bas-400.webp 400w, img/kafle/bas-500.webp 500w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="500" height="375" alt="Subbasy Aura Audio przed sceną plenerową" loading="lazy" decoding="async" style="--x:50%;--y:50%;--skala:1"></div>
         <div class="zast-tresc"><h3>Mocny bas</h3><p>Zwarty i precyzyjny dół, także tam, gdzie na podłodze jest mało miejsca.</p><span class="seria">Subbasy i seria A</span></div>
       </a><a class="zast" href="systemy/monitory-sceniczne-seria-c/">
-        <div class="zast-foto"><img src="img/kafle/monitory-480.webp" srcset="img/kafle/monitory-400.webp 400w, img/kafle/monitory-480.webp 480w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="480" height="360" alt="Monitor sceniczny Aura Audio serii C na scenie" loading="lazy" decoding="async"></div>
+        <div class="zast-foto"><img src="img/kafle/monitory-480.webp" srcset="img/kafle/monitory-400.webp 400w, img/kafle/monitory-480.webp 480w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="480" height="360" alt="Monitor sceniczny Aura Audio serii C na scenie" loading="lazy" decoding="async" style="--x:50%;--y:50%;--skala:1"></div>
         <div class="zast-tresc"><h3>Monitory sceniczne</h3><p>Muzyk słyszy siebie wyraźnie, z zapasem przed sprzężeniem.</p><span class="seria">Zobacz modele</span></div>
       </a><a class="zast" href="systemy/monitory-studyjne-seria-f/">
-        <div class="zast-foto"><img src="img/kafle/studio-480.webp" srcset="img/kafle/studio-400.webp 400w, img/kafle/studio-480.webp 480w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="480" height="360" alt="Monitor studyjny Aura Audio F2" loading="lazy" decoding="async"></div>
+        <div class="zast-foto"><img src="img/kafle/studio-480.webp" srcset="img/kafle/studio-400.webp 400w, img/kafle/studio-480.webp 480w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="480" height="360" alt="Monitor studyjny Aura Audio F2" loading="lazy" decoding="async" style="--x:50%;--y:50%;--skala:1"></div>
         <div class="zast-tresc"><h3>Studio i dom</h3><p>Słychać nagranie, a nie głośnik, także przy cichym odsłuchu.</p><span class="seria">Studio</span></div>
       </a><a class="zast" href="systemy/glosniki-instalacyjne-seria-i/">
-        <div class="zast-foto"><img src="img/kafle/instalacje-680.webp" srcset="img/kafle/instalacje-400.webp 400w, img/kafle/instalacje-680.webp 680w, img/kafle/instalacje-880.webp 880w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="680" height="510" alt="Zestaw głośnikowy Aura Audio i12 na ścianie" loading="lazy" decoding="async"></div>
+        <div class="zast-foto"><img src="img/kafle/instalacje-680.webp" srcset="img/kafle/instalacje-400.webp 400w, img/kafle/instalacje-680.webp 680w, img/kafle/instalacje-880.webp 880w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="680" height="510" alt="Zestaw głośnikowy Aura Audio i12 na ścianie" loading="lazy" decoding="async" style="--x:50%;--y:50%;--skala:1"></div>
         <div class="zast-tresc"><h3>Restauracje, kościoły, sale</h3><p>Ładne, czyste w brzmieniu i bez drogiej elektroniki.</p><span class="seria">Instalacje</span></div>
       </a><a class="zast" href="systemy/wzmacniacze/">
-        <div class="zast-foto"><img src="img/kafle/wzmacniacze-480.webp" srcset="img/kafle/wzmacniacze-400.webp 400w, img/kafle/wzmacniacze-480.webp 480w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="480" height="360" alt="Wzmacniacze Aura Audio w szafie rack" loading="lazy" decoding="async"></div>
+        <div class="zast-foto"><img src="img/kafle/wzmacniacze-480.webp" srcset="img/kafle/wzmacniacze-400.webp 400w, img/kafle/wzmacniacze-480.webp 480w" sizes="(max-width: 559px) 92vw, (max-width: 1023px) 46vw, (max-width: 1699px) 31vw, 16vw" width="480" height="360" alt="Wzmacniacze Aura Audio w szafie rack" loading="lazy" decoding="async" style="--x:50%;--y:50%;--skala:1"></div>
         <div class="zast-tresc"><h3>Wzmacniacze</h3><p>Końcówki z DSP do systemów koncertowych i kompaktowe 1U do studia.</p><span class="seria">Zobacz modele</span></div>
       </a></div>
   </div>
@@ -534,7 +539,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <section class="sekcja" style="padding-top:0">
   <div class="kontener">
     <div class="pas-cta">
-      <div><h2>Umów odsłuch albo zapytaj o system</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i zorganizujemy prezentację - część systemów mamy w ciągłym użyciu.</p></div>
+      <div><h2>Zapytaj o system i wycenę</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i przygotujemy wycenę.</p></div>
       <div class="akcje" style="margin-top:0"><a class="przycisk" href="kontakt/">Napisz do nas</a><a class="telefon-duzy" href="tel:+48507037035">507 037 035<span>Przemysław Waszkiewicz</span></a></div>
     </div>
   </div>
@@ -554,7 +559,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
         <ul>
           <li><a href="tel:+48507037035">+48 507 037 035</a></li>
           <li><a href="mailto:info@auraaudio.pl">info@auraaudio.pl</a></li>
-          <li><a href="kontakt/">Umów odsłuch</a></li>
+          <li><a href="kontakt/">Zapytaj o wycenę</a></li>
           <li><a href="https://www.facebook.com/aura.audio.polska/" target="_blank" rel="noopener">Facebook Aura Audio Polska</a></li>
           <li><a href="https://www.youtube.com/@AuraAudioOfficial/" target="_blank" rel="noopener">YouTube Aura Audio</a></li>
         </ul>
@@ -582,6 +587,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     </div>
   </div>
 </footer>
-<script src="js/main.js?v=1" defer></script>
+<script src="js/main.js?v=2" defer></script>
 </body>
 </html>

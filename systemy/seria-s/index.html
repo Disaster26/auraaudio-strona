@@ -6,7 +6,7 @@
      skrypt: js/main.js, lista filmów: dane/filmy.json, formularz: wyslij.php. Instrukcja: Instrukcja_strony_auraaudio.pl.pdf -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seria S - kolumny passive end-fired S1D, S2, S18C | Aura Audio Polska</title>
-<meta name="description" content="Kolumna S1D, system liniowy S2 i subbas S18C w opatentowanej technologii passive end-fired. Kierunkowość z konstrukcji, nie z procesora. Odsłuch i dobór systemu.">
+<meta name="description" content="Kolumna S1D, system liniowy S2 i subbas S18C w opatentowanej technologii passive end-fired. Kierunkowość z konstrukcji, nie z procesora. Dobór systemu i wycena.">
 <!-- WERSJA TESTOWA: ukryta przed Google (noindex). Na auraaudio.pl jest index, follow. -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://disaster26.github.io/auraaudio-strona/systemy/seria-s/">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Aura Audio Polska">
 <meta property="og:title" content="Seria S - kolumny passive end-fired S1D, S2, S18C | Aura Audio Polska">
-<meta property="og:description" content="Kolumna S1D, system liniowy S2 i subbas S18C w opatentowanej technologii passive end-fired. Kierunkowość z konstrukcji, nie z procesora. Odsłuch i dobór systemu.">
+<meta property="og:description" content="Kolumna S1D, system liniowy S2 i subbas S18C w opatentowanej technologii passive end-fired. Kierunkowość z konstrukcji, nie z procesora. Dobór systemu i wycena.">
 <meta property="og:url" content="https://disaster26.github.io/auraaudio-strona/systemy/seria-s/">
 <meta property="og:image" content="https://disaster26.github.io/auraaudio-strona/img/og-aura-audio-polska.jpg">
 <meta property="og:image:width" content="1200">
@@ -194,7 +194,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(10,11,13,.95) 0%,rgba(10,11,13,.8) 34%,rgba(10,11,13,.2) 66%,rgba(10,11,13,0) 82%)}
 .hero-tresc{padding:clamp(72px,14vh,120px) 0 clamp(32px,6vh,72px)}
-.hero h1{font-size:clamp(36px,4.9vw,84px);max-width:17ch;text-wrap:balance}
+.hero h1{font-size:clamp(28px,1.2rem + 2.6vw,60px);max-width:20ch;text-wrap:balance}
 .hero-lead{margin-top:22px;font-size:clamp(18px,1.35vw,22px);line-height:1.5;max-width:56ch;color:#E3E5E8}
 .hero .telefon-duzy span{color:#C9CDD2}
 
@@ -202,7 +202,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
    Tytuł po lewej, zdjęcie w kształcie pasa logo po prawej (na telefonie pod tytułem). */
 .strona-naglowek{position:relative;border-bottom:1px solid #1E2125;background:linear-gradient(180deg,#121417,rgba(14,15,17,0))}
 .strona-naglowek .kontener{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);align-items:end;padding:clamp(28px,4vw,56px) 0 clamp(36px,4.5vw,64px)}
-.strona-naglowek h1{font-size:clamp(36px,4.2vw,68px);text-wrap:balance}
+.strona-naglowek h1{font-size:clamp(30px,1.1rem + 2.4vw,56px);text-wrap:balance}
 .strona-naglowek .lead{margin-top:16px}
 .strona-foto{margin:0;aspect-ratio:16/9;overflow:hidden;clip-path:polygon(5% 0,95% 0,100% 100%,0 100%);background:#0B0C0D}
 .strona-foto img{width:100%;height:100%;object-fit:cover}
@@ -249,7 +249,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .zast:hover{background:var(--karta-2)}
 .zast-foto{aspect-ratio:4/3;overflow:hidden;background:#0B0C0D;clip-path:polygon(3% 0,97% 0,100% 100%,0 100%)}
 .zast-foto img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.zast:hover .zast-foto img{transform:scale(1.04)}
+.zast:hover .zast-foto img{transform:scale(calc(var(--skala,1) * 1.04))}
 .zast-tresc{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
 .zast h3{font-size:clamp(23px,1.7vw,28px)}
 .zast p{margin-top:8px;color:var(--tekst-2);font-size:16px}
@@ -267,6 +267,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .produkt-foto img{width:100%;height:100%;object-fit:contain;padding:5%}
 .produkt-foto--kadr img{object-fit:cover;padding:0}
 .produkt-foto--jasne{background:#fff}
+/* KADR ZDJĘCIA W TRAPEZOWYM OKIENKU (główna grafika, nagłówki podstron, kafle zastosowań)
+   W znaczniku <img> jest style="--x:50%;--y:50%;--skala:1" - wystarczy zmienić liczby:
+   --x / --y = który fragment zdjęcia widać (0% = lewo/góra, 50% = środek, 100% = prawo/dół)
+   --skala   = przybliżenie (1 = bez powiększenia, 1.2 = o 20% bliżej) */
+.pas img,.strona-foto img,.zast-foto img{object-position:var(--x,50%) var(--y,50%);transform:scale(var(--skala,1));transform-origin:var(--x,50%) var(--y,50%)}
 .produkt h2{font-size:clamp(34px,3.4vw,52px)}
 .produkt-typ{margin-top:6px;color:var(--tekst-2);font-size:18px}
 .produkt-opis{margin-top:18px}
@@ -432,7 +437,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   <div class="kontener">
     <a class="logo" href="../../" aria-label="Aura Audio Polska - strona główna"><img src="../../img/logo-aura-audio-pl-52.webp" srcset="../../img/logo-aura-audio-pl-52.webp 1x, ../../img/logo-aura-audio-pl-104.webp 2x" width="141" height="52" alt="Aura Audio PL"></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
-    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="../../systemy/" class="sekcja-aktywna">Systemy</a><ul class="podmenu"><li><a href="../../systemy/seria-s/" aria-current="page">Seria S - scena i plener</a></li><li><a href="../../systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="../../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="../../systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="../../systemy/glosniki-instalacyjne-seria-i/">Głośniki instalacyjne - seria i</a></li><li><a href="../../systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="../../technologia/">Technologia</a></li><li><a href="../../realizacje/">Realizacje</a></li><li><a href="../../filmy/">Filmy</a></li><li><a href="../../artykuly/">Artykuły</a></li><li><a class="przycisk" href="../../kontakt/">Kontakt i odsłuch</a></li></ul></nav>
+    <nav aria-label="Menu główne"><ul class="menu" id="menu"><li class="ma-podmenu"><a href="../../systemy/" class="sekcja-aktywna">Systemy</a><ul class="podmenu"><li><a href="../../systemy/seria-s/" aria-current="page">Seria S - scena i plener</a></li><li><a href="../../systemy/subbasy-xd-xq-seria-a/">Subbasy XD, XQ i seria A</a></li><li><a href="../../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne - seria C</a></li><li><a href="../../systemy/monitory-studyjne-seria-f/">Monitory studyjne - seria F</a></li><li><a href="../../systemy/glosniki-instalacyjne-seria-i/">Głośniki instalacyjne - seria i</a></li><li><a href="../../systemy/wzmacniacze/">Wzmacniacze D1, D2, D80, D100</a></li></ul></li><li><a href="../../technologia/">Technologia</a></li><li><a href="../../realizacje/">Realizacje</a></li><li><a href="../../filmy/">Filmy</a></li><li><a href="../../artykuly/">Artykuły</a></li><li><a class="przycisk" href="../../kontakt/">Kontakt i wycena</a></li></ul></nav>
   </div>
 </header>
 <main id="tresc">
@@ -444,7 +449,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
       <p class="lead">Flagowe zestawy Aura Audio w opatentowanej technologii passive end-fired. Kierunkowość w całym paśmie zapewnia sam układ głośników, dlatego dźwięk trafia do publiczności, a mniej energii idzie na scenę, w mikrofony i w ściany.</p>
       
     </div>
-    <figure class="strona-foto"><img src="../../img/naglowki/s2-grono-2-720.webp" srcset="../../img/naglowki/s2-grono-2-480.webp 480w, ../../img/naglowki/s2-grono-2-720.webp 720w, ../../img/naglowki/s2-grono-2-1000.webp 1000w" sizes="(max-width: 859px) calc(100vw - 32px), 44vw" width="720" height="405" alt="Grono systemu liniowego Aura Audio S2 i subbasy przy scenie plenerowej" fetchpriority="high"></figure>
+    <figure class="strona-foto"><img src="../../img/naglowki/s2-grono-2-720.webp" srcset="../../img/naglowki/s2-grono-2-480.webp 480w, ../../img/naglowki/s2-grono-2-720.webp 720w, ../../img/naglowki/s2-grono-2-1000.webp 1000w" sizes="(max-width: 859px) calc(100vw - 32px), 44vw" width="720" height="405" alt="Grono systemu liniowego Aura Audio S2 i subbasy przy scenie plenerowej" fetchpriority="high" style="--x:50%;--y:20%;--skala:1"></figure>
   </div>
 </section>
 <nav class="serie" aria-label="Systemy według zastosowania"><ul class="kontener"><li><a href="../../systemy/">Wszystkie</a></li><li><a href="../../systemy/seria-s/" aria-current="page">Scena i plener</a></li><li><a href="../../systemy/subbasy-xd-xq-seria-a/">Mocny bas</a></li><li><a href="../../systemy/monitory-sceniczne-seria-c/">Monitory sceniczne</a></li><li><a href="../../systemy/monitory-studyjne-seria-f/">Studio i dom</a></li><li><a href="../../systemy/glosniki-instalacyjne-seria-i/">Restauracje, kościoły, sale</a></li><li><a href="../../systemy/wzmacniacze/">Wzmacniacze</a></li></ul></nav><section class="sekcja"><div class="kontener">
@@ -485,7 +490,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 <section class="sekcja sekcja--ciemna" aria-labelledby="gal-tytul">
   <div class="kontener sekcja-naglowek"><div><h2 id="gal-tytul">Na scenie i w akcji</h2><p class="lead">Kliknij zdjęcie, żeby je powiększyć. Rząd przesuwa się palcem albo myszą.</p></div></div>
   <div class="rzad"><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/s2-grono-1-1600.webp" data-galeria="seria-s"><img src="../../img/zdjecia/s2-grono-1-400.webp" srcset="../../img/zdjecia/s2-grono-1-300.webp 300w, ../../img/zdjecia/s2-grono-1-400.webp 400w, ../../img/zdjecia/s2-grono-1-720.webp 720w, ../../img/zdjecia/s2-grono-1-1200.webp 1200w, ../../img/zdjecia/s2-grono-1-1600.webp 1600w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="533" alt="Grono Aura Audio S2 na wieży przy scenie plenerowej" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/s2-grono-3-1600.webp" data-galeria="seria-s"><img src="../../img/zdjecia/s2-grono-3-400.webp" srcset="../../img/zdjecia/s2-grono-3-300.webp 300w, ../../img/zdjecia/s2-grono-3-400.webp 400w, ../../img/zdjecia/s2-grono-3-720.webp 720w, ../../img/zdjecia/s2-grono-3-1200.webp 1200w, ../../img/zdjecia/s2-grono-3-1600.webp 1600w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="533" alt="Grono systemu liniowego S2 nad publicznością koncertu plenerowego" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/grono1-499.webp" data-galeria="seria-s"><img src="../../img/zdjecia/grono1-400.webp" srcset="../../img/zdjecia/grono1-300.webp 300w, ../../img/zdjecia/grono1-400.webp 400w, ../../img/zdjecia/grono1-499.webp 499w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="802" alt="Moduły systemu liniowego Aura Audio S2 z bliska" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/s2-array-900.webp" data-galeria="seria-s"><img src="../../img/zdjecia/s2-array-400.webp" srcset="../../img/zdjecia/s2-array-300.webp 300w, ../../img/zdjecia/s2-array-400.webp 400w, ../../img/zdjecia/s2-array-720.webp 720w, ../../img/zdjecia/s2-array-900.webp 900w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="710" alt="System liniowy Aura Audio S2 na plenerze" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/s2-900.webp" data-galeria="seria-s"><img src="../../img/zdjecia/s2-400.webp" srcset="../../img/zdjecia/s2-300.webp 300w, ../../img/zdjecia/s2-400.webp 400w, ../../img/zdjecia/s2-720.webp 720w, ../../img/zdjecia/s2-900.webp 900w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="711" alt="System S2 i subbasy na stoisku Aura Audio" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/s1d-1-500.webp" data-galeria="seria-s"><img src="../../img/zdjecia/s1d-1-400.webp" srcset="../../img/zdjecia/s1d-1-300.webp 300w, ../../img/zdjecia/s1d-1-400.webp 400w, ../../img/zdjecia/s1d-1-500.webp 500w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="800" alt="Kolumna Aura Audio S1D na statywie" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/s1d-2-500.webp" data-galeria="seria-s"><img src="../../img/zdjecia/s1d-2-400.webp" srcset="../../img/zdjecia/s1d-2-300.webp 300w, ../../img/zdjecia/s1d-2-400.webp 400w, ../../img/zdjecia/s1d-2-500.webp 500w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="800" alt="Kolumna Aura Audio S1D przy scenie plenerowej" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/wood1-500.webp" data-galeria="seria-s"><img src="../../img/zdjecia/wood1-400.webp" srcset="../../img/zdjecia/wood1-300.webp 300w, ../../img/zdjecia/wood1-400.webp 400w, ../../img/zdjecia/wood1-500.webp 500w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="800" alt="System Aura Audio na koncercie plenerowym" loading="lazy" decoding="async"></a></figure><figure class="pion"><a class="galeria-link" href="../../img/zdjecia/wood2-500.webp" data-galeria="seria-s"><img src="../../img/zdjecia/wood2-400.webp" srcset="../../img/zdjecia/wood2-300.webp 300w, ../../img/zdjecia/wood2-400.webp 400w, ../../img/zdjecia/wood2-500.webp 500w" sizes="(max-width: 940px) 160px, 17vw" width="400" height="800" alt="Publiczność koncertu nagłaśnianego systemem Aura Audio" loading="lazy" decoding="async"></a></figure></div>
-</section><section class="sekcja" aria-labelledby="fl-tytul"><div class="kontener"><div class="sekcja-naglowek"><div><h2 id="fl-tytul">Filmy</h2></div><a class="link-dalej" href="../../filmy/">Wszystkie filmy</a></div><div class="filmy-siatka"><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="VFMQoiS_Rso" aria-label="Odtwórz film: Technologia Passive End Fire - patent firmy Aura Audio"><img src="../../img/filmy/VFMQoiS_Rso.webp" width="640" height="360" alt="" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">Technologia Passive End Fire - patent firmy Aura Audio (Przemysław Waszkiewicz, PL)</figcaption></figure></div><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="oWk3I6TdpXc" aria-label="Odtwórz film: Aura Audio S1D - Prolight+Sound 2024"><img src="../../img/filmy/oWk3I6TdpXc.webp" width="640" height="360" alt="" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">Aura Audio S1D - Prolight+Sound 2024 (Przemysław Waszkiewicz, PL)</figcaption></figure></div><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="ZtNacE6YjOU" aria-label="Odtwórz film: S1D on the road 2026"><img src="../../img/filmy/ZtNacE6YjOU.webp" width="640" height="360" alt="" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">S1D on the road 2026 (Aura Audio Official, EN)</figcaption></figure></div><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="fdNHpY2VtaM" aria-label="Odtwórz film: S-series with Turku Audio 2025"><img src="../../img/filmy/fdNHpY2VtaM.webp" width="640" height="360" alt="" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">S-series with Turku Audio 2025 (Aura Audio Official, EN)</figcaption></figure></div></div></div></section><section class="sekcja" aria-labelledby="pl-tytul" style="padding-top:0">
+</section><section class="sekcja" aria-labelledby="fl-tytul"><div class="kontener"><div class="sekcja-naglowek"><div><h2 id="fl-tytul">Filmy</h2></div><a class="link-dalej" href="../../filmy/">Wszystkie filmy</a></div><div class="filmy-siatka"><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="VFMQoiS_Rso" aria-label="Odtwórz film: Technologia Passive End Fire - patent firmy Aura Audio"><img src="../../img/filmy/VFMQoiS_Rso.webp" width="640" height="360" alt="Kadr z filmu: Technologia Passive End Fire - patent firmy Aura Audio" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">Technologia Passive End Fire - patent firmy Aura Audio (Przemysław Waszkiewicz, PL)</figcaption></figure></div><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="oWk3I6TdpXc" aria-label="Odtwórz film: Aura Audio S1D - Prolight+Sound 2024"><img src="../../img/filmy/oWk3I6TdpXc.webp" width="640" height="360" alt="Kadr z filmu: Aura Audio S1D - Prolight+Sound 2024" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">Aura Audio S1D - Prolight+Sound 2024 (Przemysław Waszkiewicz, PL)</figcaption></figure></div><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="ZtNacE6YjOU" aria-label="Odtwórz film: S1D on the road 2026"><img src="../../img/filmy/ZtNacE6YjOU.webp" width="640" height="360" alt="Kadr z filmu: S1D on the road 2026" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">S1D on the road 2026 (Aura Audio Official, EN)</figcaption></figure></div><div class="film-karta"><figure class="film-figura " style="margin:0"><button class="film" type="button" data-platforma="youtube" data-id="fdNHpY2VtaM" aria-label="Odtwórz film: S-series with Turku Audio 2025"><img src="../../img/filmy/fdNHpY2VtaM.webp" width="640" height="360" alt="Kadr z filmu: S-series with Turku Audio 2025" loading="lazy" decoding="async"><span class="film-play" aria-hidden="true"></span></button><figcaption class="podpis">S-series with Turku Audio 2025 (Aura Audio Official, EN)</figcaption></figure></div></div></div></section><section class="sekcja" aria-labelledby="pl-tytul" style="padding-top:0">
   <div class="kontener dwie-kolumny" style="align-items:start">
     <div><h2 id="pl-tytul" style="font-size:clamp(28px,2.6vw,40px)">Do pobrania</h2><ul class="lista-pasy pliki"><li><a href="https://irp.cdn-website.com/cb3ad5f1/files/uploaded/S-series-2024.pdf" target="_blank" rel="noopener">Broszura serii S</a> <small>PDF</small></li><li><a href="https://irp.cdn-website.com/cb3ad5f1/files/uploaded/Aura+Audio+full+catalog+2027.pdf" target="_blank" rel="noopener">Pełny katalog Aura Audio 2027</a> <small>PDF</small></li><li><a href="https://irp.cdn-website.com/cb3ad5f1/files/uploaded/S1-V10.gll" target="_blank" rel="noopener">S1 / S1D - plik GLL</a> <small>GLL</small></li><li><a href="https://irp.cdn-website.com/cb3ad5f1/files/uploaded/Aura_Audio_S2.gll" target="_blank" rel="noopener">S2 - plik GLL</a> <small>GLL</small></li><li><a href="https://irp.cdn-website.com/cb3ad5f1/files/uploaded/S18_V10.gll" target="_blank" rel="noopener">S18 / S18C - plik GLL</a> <small>GLL</small></li></ul></div>
     <p class="producent" style="margin-top:0;border-top:0;padding-top:0">Opisaliśmy tu wybrane produkty. Całą serię z parametrami technicznymi znajdziesz na stronie producenta:
@@ -494,7 +499,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 </section><section class="sekcja" style="padding-top:0">
   <div class="kontener">
     <div class="pas-cta">
-      <div><h2>Umów odsłuch albo zapytaj o system</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i zorganizujemy prezentację - część systemów mamy w ciągłym użyciu.</p></div>
+      <div><h2>Zapytaj o system i wycenę</h2><p>Napisz, gdzie ma grać nagłośnienie i ile osób ma słuchać. Doradzimy, co wybrać, i przygotujemy wycenę.</p></div>
       <div class="akcje" style="margin-top:0"><a class="przycisk" href="../../kontakt/">Napisz do nas</a><a class="telefon-duzy" href="tel:+48507037035">507 037 035<span>Przemysław Waszkiewicz</span></a></div>
     </div>
   </div>
@@ -513,7 +518,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
         <ul>
           <li><a href="tel:+48507037035">+48 507 037 035</a></li>
           <li><a href="mailto:info@auraaudio.pl">info@auraaudio.pl</a></li>
-          <li><a href="../../kontakt/">Umów odsłuch</a></li>
+          <li><a href="../../kontakt/">Zapytaj o wycenę</a></li>
           <li><a href="https://www.facebook.com/aura.audio.polska/" target="_blank" rel="noopener">Facebook Aura Audio Polska</a></li>
           <li><a href="https://www.youtube.com/@AuraAudioOfficial/" target="_blank" rel="noopener">YouTube Aura Audio</a></li>
         </ul>
@@ -541,6 +546,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
     </div>
   </div>
 </footer>
-<script src="../../js/main.js?v=1" defer></script>
+<script src="../../js/main.js?v=2" defer></script>
 </body>
 </html>

@@ -112,7 +112,7 @@ function kartaFilmu(film, ukryta, odRazu) {
   const img = document.createElement('img');
   img.src = miniatura(film);
   img.width = 640; img.height = 360;
-  img.alt = '';
+  img.alt = 'Kadr z filmu: ' + film.tytul;
   if (!odRazu) { img.loading = 'lazy'; img.decoding = 'async'; }   // pierwsze okładki od razu (bez czekania)
   const play = document.createElement('span');
   play.className = 'film-play';
