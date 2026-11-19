@@ -6,7 +6,7 @@ Firma: OFFSTAGE PRZEMYSŁAW WASZKIEWICZ, ul. Perłowa 14, 83-031 Łęgowo (magaz
 
 ## Systemy według zastosowania
 - [Scena i plener - Seria S](https://disaster26.github.io/auraaudio-strona/systemy/seria-s/): S1D, S2, S18C
-- [Mocny bas - Subbasy i seria A](https://disaster26.github.io/auraaudio-strona/systemy/subbasy-xd-xq-seria-a/): XD12, XQ48, Seria A
+- [Kierunkowy bas - Subbasy i seria A](https://disaster26.github.io/auraaudio-strona/systemy/subbasy-xd-xq-seria-a/): XD12, XQ48, Seria A
 - [Monitory sceniczne - Monitory sceniczne](https://disaster26.github.io/auraaudio-strona/systemy/monitory-sceniczne-seria-c/): C10, C12 i C15
 - [Studio i dom - Studio](https://disaster26.github.io/auraaudio-strona/systemy/monitory-studyjne-seria-f/): F2, F1 i Fsub, F2 Home Edition
 - [Restauracje, kościoły, sale - Instalacje](https://disaster26.github.io/auraaudio-strona/systemy/glosniki-instalacyjne-seria-i/): i3, i3PR, i8 i i12
