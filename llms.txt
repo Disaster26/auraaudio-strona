@@ -5,17 +5,17 @@
 Firma: OFFSTAGE PRZEMYSŁAW WASZKIEWICZ, ul. Perłowa 14, 83-031 Łęgowo (magazyn w Gdańsku). Telefon: +48 507 037 035. E-mail: info@auraaudio.pl.
 
 ## Systemy według zastosowania
-- [Scena i plener - Seria S](https://disaster26.github.io/auraaudio-strona/systemy/seria-s/): S1D, S2, S18C
-- [Kierunkowy bas - Subbasy i seria A](https://disaster26.github.io/auraaudio-strona/systemy/subbasy-xd-xq-seria-a/): XD12, XQ48, Seria A
-- [Monitory sceniczne - Monitory sceniczne](https://disaster26.github.io/auraaudio-strona/systemy/monitory-sceniczne-seria-c/): C10, C12 i C15
-- [Studio i dom - Studio](https://disaster26.github.io/auraaudio-strona/systemy/monitory-studyjne-seria-f/): F2, F1 i Fsub, F2 Home Edition
-- [Restauracje, kościoły, sale - Instalacje](https://disaster26.github.io/auraaudio-strona/systemy/glosniki-instalacyjne-seria-i/): i3, i3PR, i8 i i12
-- [Wzmacniacze - Wzmacniacze](https://disaster26.github.io/auraaudio-strona/systemy/wzmacniacze/): Duża moc i pokładowe DSP, Presety dla Powersoft, D1 i D2 - kompaktowe 1U
+- [Scena i plener - Seria S](https://wylinka-podglad.pl/auraaudio-strona/systemy/seria-s/): S1D, S2, S18C
+- [Kierunkowy bas - Subbasy i seria A](https://wylinka-podglad.pl/auraaudio-strona/systemy/subbasy-xd-xq-seria-a/): XD12, XQ48, Seria A
+- [Monitory sceniczne - Monitory sceniczne](https://wylinka-podglad.pl/auraaudio-strona/systemy/monitory-sceniczne-seria-c/): C10, C12 i C15
+- [Studio i dom - Studio](https://wylinka-podglad.pl/auraaudio-strona/systemy/monitory-studyjne-seria-f/): F2, F1 i Fsub, F2 Home Edition
+- [Restauracje, kościoły, sale - Instalacje](https://wylinka-podglad.pl/auraaudio-strona/systemy/glosniki-instalacyjne-seria-i/): i3, i3PR, i8 i i12
+- [Wzmacniacze - Wzmacniacze](https://wylinka-podglad.pl/auraaudio-strona/systemy/wzmacniacze/): Duża moc i pokładowe DSP, Presety dla Powersoft, D1 i D2 - kompaktowe 1U
 
 ## Strony
-- [Technologia](https://disaster26.github.io/auraaudio-strona/technologia/): passive end-fired, falowody, minimum DSP
-- [Realizacje](https://disaster26.github.io/auraaudio-strona/realizacje/): koncerty, kościoły, teatr, plenery
-- [Filmy](https://disaster26.github.io/auraaudio-strona/filmy/): prezentacje i testy
-- [Artykuły](https://disaster26.github.io/auraaudio-strona/artykuly/): infosound.pl, realizator.pl, Faital Pro, Prolight+Sound
-- [Do pobrania](https://disaster26.github.io/auraaudio-strona/do-pobrania/): katalog 2027, pliki GLL
-- [Kontakt](https://disaster26.github.io/auraaudio-strona/kontakt/): formularz, telefon, wycena
+- [Technologia](https://wylinka-podglad.pl/auraaudio-strona/technologia/): passive end-fired, falowody, minimum DSP
+- [Realizacje](https://wylinka-podglad.pl/auraaudio-strona/realizacje/): koncerty, kościoły, teatr, plenery
+- [Filmy](https://wylinka-podglad.pl/auraaudio-strona/filmy/): prezentacje i testy
+- [Artykuły](https://wylinka-podglad.pl/auraaudio-strona/artykuly/): infosound.pl, realizator.pl, Faital Pro, Prolight+Sound
+- [Do pobrania](https://wylinka-podglad.pl/auraaudio-strona/do-pobrania/): katalog 2027, pliki GLL
+- [Kontakt](https://wylinka-podglad.pl/auraaudio-strona/kontakt/): formularz, telefon, wycena
